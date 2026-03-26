@@ -202,15 +202,18 @@ const branchen = [
 function generateHTML(branche, stadt) {
   const stadtName = stadt.name;
   const stadtSlug = stadt.slug;
-  const title = `Webdesign für ${branche.name} in ${stadtName} | WEBCRAFT`;
-  const metaDescription = branche.metaDesc(stadtName);
+  const titleLong = `Webdesign für ${branche.name} in ${stadtName} | WEBCRAFT`;
+  const titleShort = `Webdesign ${branche.name} ${stadtName} | WEBCRAFT`;
+  const title = titleLong.length > 60 ? titleShort : titleLong;
+  const metaDescFull = branche.metaDesc(stadtName);
+  const metaDescription = metaDescFull.length > 155 ? metaDescFull.substring(0, 152) + '...' : metaDescFull;
   const heroSubline = branche.heroSub(stadtName);
   const filename = `webdesign-${branche.slug}-${stadtSlug}.html`;
   const canonicalUrl = `https://webcraft-studio.de/landing/${filename}`;
   const faqs = branche.faqs(stadtName);
 
   const leistungenHTML = branche.leistungen.map((l, i) => {
-    const desc = l.desc.replace('{stadt}', stadtName);
+    const desc = l.desc.replaceAll('{stadt}', stadtName);
     return `
       <div class="lp-card reveal${i > 0 ? ` reveal-d${i}` : ''}">
         <div class="lp-card-num">0${i + 1}</div>
@@ -224,12 +227,12 @@ function generateHTML(branche, stadt) {
           <div class="lp-problem-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
-          <p>${p.replace('{stadt}', stadtName)}</p>
+          <p>${p.replaceAll('{stadt}', stadtName)}</p>
         </div>`).join('');
 
   const faqsHTML = faqs.map((faq, i) => `
       <div class="faq-item reveal${i > 0 ? ` reveal-d${Math.min(i, 3)}` : ''}">
-        <button class="faq-q">${faq.q}<span class="faq-toggle">+</span></button>
+        <button class="faq-q" aria-expanded="false">${faq.q}<span class="faq-toggle">+</span></button>
         <div class="faq-a"><p>${faq.a}</p></div>
       </div>`).join('');
 
@@ -284,7 +287,7 @@ function generateHTML(branche, stadt) {
           "itemOffered": {
             "@type": "Service",
             "name": l.title,
-            "description": l.desc.replace('{stadt}', stadtName)
+            "description": l.desc.replaceAll('{stadt}', stadtName)
           }
         }))
       }
@@ -315,7 +318,7 @@ function generateHTML(branche, stadt) {
           "@type": "ListItem",
           "position": 2,
           "name": `Webdesign für ${branche.name}`,
-          "item": `https://webcraft-studio.de/landing/webdesign-${branche.slug}-hannover.html`
+          "item": `https://webcraft-studio.de/landing/webdesign-${branche.slug}-${stadtSlug}.html`
         },
         {
           "@type": "ListItem",
@@ -357,6 +360,9 @@ function generateHTML(branche, stadt) {
 <meta property="og:url" content="${canonicalUrl}">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="WEBCRAFT">
+<meta property="og:image" content="https://webcraft-studio.de/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- AI/LLM Optimization -->
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -746,6 +752,7 @@ body::before {
 </style>
 </head>
 <body>
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <!-- HEADER -->
 <header class="header" id="header">
@@ -764,6 +771,7 @@ body::before {
   </div>
 </header>
 
+<main>
 <!-- HERO -->
 <section class="lp-hero">
   <div class="hero-glow hero-glow-1"></div>
@@ -944,6 +952,7 @@ body::before {
     </form>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -970,17 +979,17 @@ body::before {
       </div>
       <div class="footer-col">
         <h4>Rechtliches</h4>
-        <a href="../index.html">Impressum</a>
-        <a href="../index.html">Datenschutz</a>
-        <a href="../index.html">AGB</a>
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="../agb.html">AGB</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 WEBCRAFT. Alle Rechte vorbehalten.</p>
       <div class="footer-socials">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="LinkedIn">LI</a>
-        <a href="#" aria-label="Dribbble">DR</a>
+        <a href="https://www.instagram.com/webcraft.studio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/company/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+        <a href="https://dribbble.com/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">DR</a>
       </div>
     </div>
   </div>
@@ -1020,8 +1029,14 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
     const wasActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
-    if (!wasActive) item.classList.add('active');
+    document.querySelectorAll('.faq-item.active').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!wasActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
