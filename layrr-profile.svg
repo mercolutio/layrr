@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#050505"/>
+  <circle cx="540" cy="540" r="480" fill="none" stroke="#c8ff00" stroke-width="4" opacity="0.15"/>
+  <circle cx="540" cy="540" r="380" fill="none" stroke="#c8ff00" stroke-width="2" opacity="0.08"/>
+  <text x="540" y="565" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="220" fill="#ffffff" letter-spacing="-8">LAYRR</text>
+  <circle cx="858" cy="400" r="16" fill="#c8ff00"/>
+</svg>
