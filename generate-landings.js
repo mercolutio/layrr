@@ -60,7 +60,7 @@ const branchen = [
     ],
     keywords: 'Solarfirma, Photovoltaik, PV-Anlage, Solaranlage, Solarteur',
     faqs: (stadt) => [
-      { q: `Was kostet eine Website für eine Solarfirma in ${stadt}?`, a: `Eine professionelle Website für Solarfirmen in ${stadt} gibt es bei WEBCRAFT ab einem Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein individuelles Angebot — transparent und ohne versteckte Kosten.` },
+      { q: `Was kostet eine Website für eine Solarfirma in ${stadt}?`, a: `Eine professionelle Website für Solarfirmen in ${stadt} gibt es bei LAYRR ab einem Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein individuelles Angebot — transparent und ohne versteckte Kosten.` },
       { q: `Wie schnell ist die Website für meine Solarfirma in ${stadt} fertig?`, a: `In der Regel ist Ihre neue Website innerhalb von 7 Werktagen online. Wir arbeiten effizient und halten Sie über den gesamten Prozess auf dem Laufenden.` },
       { q: `Wird meine Solarfirma in ${stadt} bei Google gefunden?`, a: `Ja. Jede Website wird von uns für lokale Suchanfragen wie „Solaranlage ${stadt}", „Photovoltaik ${stadt}" und „Solarfirma ${stadt}" optimiert. Wir setzen auf technische SEO, lokale Signale und strukturierte Daten.` },
       { q: `Welche Inhalte brauche ich für die Website meiner Solarfirma?`, a: `Idealerweise: Beschreibung Ihrer Leistungen (PV-Anlagen, Stromspeicher, Wallboxen), Referenzprojekte und Kontaktdaten. Auf Wunsch erstellen wir die Texte für Sie — branchenspezifisch und SEO-optimiert.` },
@@ -86,7 +86,7 @@ const branchen = [
     ],
     keywords: 'Wärmepumpe, Heizung, Wärmepumpen-Installation, Heiztechnik, Energieberatung',
     faqs: (stadt) => [
-      { q: `Was kostet eine Website für Wärmepumpenfirmen in ${stadt}?`, a: `WEBCRAFT bietet Websites für Wärmepumpenfirmen in ${stadt} zum Festpreis an. Im kostenlosen Erstgespräch klären wir den Umfang und erstellen ein transparentes Angebot ohne versteckte Kosten.` },
+      { q: `Was kostet eine Website für Wärmepumpenfirmen in ${stadt}?`, a: `LAYRR bietet Websites für Wärmepumpenfirmen in ${stadt} zum Festpreis an. Im kostenlosen Erstgespräch klären wir den Umfang und erstellen ein transparentes Angebot ohne versteckte Kosten.` },
       { q: `Wie werden Wärmepumpenfirmen in ${stadt} online gefunden?`, a: `Durch gezielte lokale SEO-Optimierung für Suchbegriffe wie „Wärmepumpe ${stadt}", „Heizung erneuern ${stadt}" und „Wärmepumpen-Installateur ${stadt}". Wir optimieren Ihre Website technisch und inhaltlich für maximale Sichtbarkeit.` },
       { q: `Können Sie auch Fördermittel-Informationen auf der Website darstellen?`, a: `Ja. Wir integrieren aktuelle Informationen zu Förderprogrammen (BAFA, KfW) übersichtlich auf Ihrer Website — ein wichtiger Vertrauensfaktor für potenzielle Kunden.` },
       { q: `Wie lange dauert die Erstellung einer Wärmepumpen-Website?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7 Werktagen fertig und online — inklusive mobilfreundlichem Design, SEO-Optimierung und Kontaktformular.` },
@@ -138,7 +138,7 @@ const branchen = [
     ],
     keywords: 'lokales Unternehmen, Firma, Geschäft, Dienstleister, regional',
     faqs: (stadt) => [
-      { q: `Was kostet eine Website für lokale Firmen in ${stadt}?`, a: `WEBCRAFT erstellt Websites für lokale Unternehmen in ${stadt} zum transparenten Festpreis. Im kostenlosen Erstgespräch klären wir Ihren Bedarf und erstellen ein individuelles Angebot.` },
+      { q: `Was kostet eine Website für lokale Firmen in ${stadt}?`, a: `LAYRR erstellt Websites für lokale Unternehmen in ${stadt} zum transparenten Festpreis. Im kostenlosen Erstgespräch klären wir Ihren Bedarf und erstellen ein individuelles Angebot.` },
       { q: `Warum braucht mein lokales Geschäft in ${stadt} eine Website?`, a: `Über 87% der Verbraucher googeln bevor sie ein lokales Unternehmen besuchen. Ohne Website verlieren Sie diese Kunden an die Konkurrenz. Eine professionelle Website schafft Vertrauen und generiert rund um die Uhr Anfragen.` },
       { q: `Werde ich mit meiner Firma in ${stadt} bei Google gefunden?`, a: `Ja. Wir optimieren Ihre Website für lokale Suchanfragen in ${stadt} und Umgebung. Zusätzlich helfen wir bei der Einrichtung und Optimierung Ihres Google My Business Profils.` },
       { q: `Muss ich technisches Wissen mitbringen?`, a: `Nein. Wir kümmern uns um alles — Design, Technik, Texte und SEO. Sie liefern Ihre Wünsche und Inhalte, wir setzen alles professionell um.` },
@@ -164,7 +164,7 @@ const branchen = [
     ],
     keywords: 'Werkstatt, KFZ-Werkstatt, Autowerkstatt, Reparatur, Inspektion',
     faqs: (stadt) => [
-      { q: `Was kostet eine Website für Werkstätten in ${stadt}?`, a: `WEBCRAFT bietet Websites für Werkstätten in ${stadt} zum Festpreis — transparent und ohne versteckte Kosten. Im kostenlosen Erstgespräch klären wir Ihren Bedarf.` },
+      { q: `Was kostet eine Website für Werkstätten in ${stadt}?`, a: `LAYRR bietet Websites für Werkstätten in ${stadt} zum Festpreis — transparent und ohne versteckte Kosten. Im kostenlosen Erstgespräch klären wir Ihren Bedarf.` },
       { q: `Kann eine Online-Terminbuchung integriert werden?`, a: `Ja. Wir integrieren ein benutzerfreundliches Terminbuchungs-System, damit Ihre Kunden in ${stadt} rund um die Uhr Termine online vereinbaren können — ohne Anruf.` },
       { q: `Wie wird meine Werkstatt in ${stadt} bei Google gefunden?`, a: `Durch lokale SEO-Optimierung für Suchbegriffe wie „KFZ-Werkstatt ${stadt}", „Autowerkstatt ${stadt}" und „Werkstatt in der Nähe". Wir sorgen dafür, dass Sie in der lokalen Suche ganz oben stehen.` },
       { q: `Wie schnell ist meine Werkstatt-Website fertig?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7 Werktagen online — inklusive mobilfreundlichem Design, SEO und Kontaktformular.` },
@@ -190,7 +190,7 @@ const branchen = [
     ],
     keywords: 'KFZ-Gutachter, Sachverständiger, Unfallgutachten, KFZ-Sachverständiger, Schadensgutachten',
     faqs: (stadt) => [
-      { q: `Was kostet eine Website für KFZ-Gutachter in ${stadt}?`, a: `WEBCRAFT erstellt professionelle Websites für KFZ-Gutachter in ${stadt} zum Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein transparentes Angebot.` },
+      { q: `Was kostet eine Website für KFZ-Gutachter in ${stadt}?`, a: `LAYRR erstellt professionelle Websites für KFZ-Gutachter in ${stadt} zum Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein transparentes Angebot.` },
       { q: `Wie finden Unfallgeschädigte in ${stadt} meinen Gutachter-Service?`, a: `Durch lokale SEO-Optimierung für Suchanfragen wie „KFZ-Gutachter ${stadt}", „Unfallgutachten ${stadt}" und „Sachverständiger ${stadt}". Wir sorgen dafür, dass Sie bei Google und in KI-Suchmaschinen gefunden werden.` },
       { q: `Können Zertifikate und Qualifikationen auf der Website dargestellt werden?`, a: `Ja. Wir präsentieren Ihre Zertifizierungen, Kammer-Zugehörigkeit und Spezialisierungen professionell — das schafft Vertrauen bei Geschädigten, Anwälten und Versicherungen.` },
       { q: `Wie schnell ist meine KFZ-Gutachter-Website fertig?`, a: `In der Regel innerhalb von 7 Werktagen. Schnelle Umsetzung ist gerade für KFZ-Gutachter wichtig — je früher Sie online sind, desto schneller kommen die Aufträge.` },
@@ -202,14 +202,14 @@ const branchen = [
 function generateHTML(branche, stadt) {
   const stadtName = stadt.name;
   const stadtSlug = stadt.slug;
-  const titleLong = `Webdesign für ${branche.name} in ${stadtName} | WEBCRAFT`;
-  const titleShort = `Webdesign ${branche.name} ${stadtName} | WEBCRAFT`;
+  const titleLong = `Webdesign für ${branche.name} in ${stadtName} | LAYRR`;
+  const titleShort = `Webdesign ${branche.name} ${stadtName} | LAYRR`;
   const title = titleLong.length > 60 ? titleShort : titleLong;
   const metaDescFull = branche.metaDesc(stadtName);
   const metaDescription = metaDescFull.length > 155 ? metaDescFull.substring(0, 152) + '...' : metaDescFull;
   const heroSubline = branche.heroSub(stadtName);
   const filename = `webdesign-${branche.slug}-${stadtSlug}.html`;
-  const canonicalUrl = `https://webcraft-studio.de/landing/${filename}`;
+  const canonicalUrl = `https://layrr.de/landing/${filename}`;
   const faqs = branche.faqs(stadtName);
 
   const leistungenHTML = branche.leistungen.map((l, i) => {
@@ -241,11 +241,11 @@ function generateHTML(branche, stadt) {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": `WEBCRAFT — Webdesign für ${branche.name} in ${stadtName}`,
+      "name": `LAYRR — Webdesign für ${branche.name} in ${stadtName}`,
       "description": metaDescription,
       "url": canonicalUrl,
       "telephone": "+49 123 456 7890",
-      "email": "info@webcraft-studio.de",
+      "email": "info@layrr.de",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": stadtName,
@@ -269,8 +269,8 @@ function generateHTML(branche, stadt) {
       "serviceType": `Webdesign für ${branche.name}`,
       "provider": {
         "@type": "Organization",
-        "name": "WEBCRAFT",
-        "url": "https://webcraft-studio.de"
+        "name": "LAYRR",
+        "url": "https://layrr.de"
       },
       "priceRange": "$$",
       "openingHoursSpecification": {
@@ -311,14 +311,14 @@ function generateHTML(branche, stadt) {
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "WEBCRAFT",
-          "item": "https://webcraft-studio.de"
+          "name": "LAYRR",
+          "item": "https://layrr.de"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": `Webdesign für ${branche.name}`,
-          "item": `https://webcraft-studio.de/landing/webdesign-${branche.slug}-${stadtSlug}.html`
+          "item": `https://layrr.de/landing/webdesign-${branche.slug}-${stadtSlug}.html`
         },
         {
           "@type": "ListItem",
@@ -335,7 +335,7 @@ function generateHTML(branche, stadt) {
   ).join('\n');
 
   // Zusammenfassungstext für LLM/AI-Crawler (natürlicher Fließtext)
-  const llmSummary = `WEBCRAFT ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. WEBCRAFT bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@webcraft-studio.de, Tel: +49 123 456 7890.`;
+  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 123 456 7890.`;
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -359,8 +359,8 @@ function generateHTML(branche, stadt) {
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonicalUrl}">
 <meta property="og:locale" content="de_DE">
-<meta property="og:site_name" content="WEBCRAFT">
-<meta property="og:image" content="https://webcraft-studio.de/og-image.jpg">
+<meta property="og:site_name" content="LAYRR">
+<meta property="og:image" content="https://layrr.de/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -757,7 +757,7 @@ body::before {
 <!-- HEADER -->
 <header class="header" id="header">
   <div class="container header-inner">
-    <a href="../index.html" class="logo">WEBCRAFT<span class="logo-dot"></span></a>
+    <a href="../index.html" class="logo">LAYRR<span class="logo-dot"></span></a>
     <nav class="nav" id="nav">
       <a href="../index.html#leistungen">Leistungen</a>
       <a href="../index.html#portfolio">Arbeiten</a>
@@ -800,7 +800,7 @@ body::before {
       <div class="section-tag">Über diesen Service</div>
       <h2 class="section-heading">Webdesign-Agentur für <em>${branche.name}</em> in ${stadtName}</h2>
       <article class="lp-summary-text">
-        <p><strong>WEBCRAFT</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@webcraft-studio.de</strong> oder telefonisch unter <strong>+49 123 456 7890</strong>.</p>
+        <p><strong>LAYRR</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@layrr.de</strong> oder telefonisch unter <strong>+49 123 456 7890</strong>.</p>
       </article>
     </div>
   </div>
@@ -900,7 +900,7 @@ body::before {
         </div>
         <div>
           <div class="cd-label">E-Mail</div>
-          <div class="cd-value">info@webcraft-studio.de</div>
+          <div class="cd-value">info@layrr.de</div>
         </div>
       </div>
       <div class="contact-detail">
@@ -959,7 +959,7 @@ body::before {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="../index.html" class="logo">WEBCRAFT<span class="logo-dot"></span></a>
+        <a href="../index.html" class="logo">LAYRR<span class="logo-dot"></span></a>
         <p>Modernes Webdesign für kleine Unternehmen. Schnell, professionell und bezahlbar.</p>
       </div>
       <div class="footer-col">
@@ -985,11 +985,11 @@ body::before {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 WEBCRAFT. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2026 LAYRR. Alle Rechte vorbehalten.</p>
       <div class="footer-socials">
-        <a href="https://www.instagram.com/webcraft.studio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-        <a href="https://www.linkedin.com/company/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
-        <a href="https://dribbble.com/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">DR</a>
+        <a href="https://www.instagram.com/layrr.de" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/company/layrr" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+        <a href="https://dribbble.com/layrr" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">DR</a>
       </div>
     </div>
   </div>
@@ -1076,9 +1076,9 @@ for (const branche of branchen) {
 }
 
 // ====== GENERATE llms.txt ======
-const llmsTxt = `# WEBCRAFT — Webdesign-Agentur
+const llmsTxt = `# LAYRR — Webdesign-Agentur
 
-> WEBCRAFT erstellt professionelle Websites für kleine und mittelständische Unternehmen in Niedersachsen. Spezialisiert auf Solarfirmen, Wärmepumpenfirmen, SHK-Betriebe, lokale Firmen, Werkstätten und KFZ-Gutachter.
+> LAYRR erstellt professionelle Websites für kleine und mittelständische Unternehmen in Niedersachsen. Spezialisiert auf Solarfirmen, Wärmepumpenfirmen, SHK-Betriebe, lokale Firmen, Werkstätten und KFZ-Gutachter.
 
 ## Angebot
 
@@ -1098,14 +1098,14 @@ Niedersachsen, Deutschland. Städte: ${staedte.map(s => s.name).join(', ')}.
 
 ## Kontakt
 
-- Website: https://webcraft-studio.de
-- E-Mail: info@webcraft-studio.de
+- Website: https://layrr.de
+- E-Mail: info@layrr.de
 - Telefon: +49 123 456 7890
 
 ## Landing Pages
 
 ${branchen.map(b => staedte.map(s =>
-  `- [Webdesign für ${b.name} in ${s.name}](https://webcraft-studio.de/landing/webdesign-${b.slug}-${s.slug}.html)`
+  `- [Webdesign für ${b.name} in ${s.name}](https://layrr.de/landing/webdesign-${b.slug}-${s.slug}.html)`
 ).join('\n')).join('\n')}
 `;
 
