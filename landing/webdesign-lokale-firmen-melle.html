@@ -21,6 +21,9 @@
 <meta property="og:url" content="https://webcraft-studio.de/landing/webdesign-lokale-firmen-melle.html">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="WEBCRAFT">
+<meta property="og:image" content="https://webcraft-studio.de/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- AI/LLM Optimization -->
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -179,7 +182,7 @@
       "@type": "ListItem",
       "position": 2,
       "name": "Webdesign für Lokale Firmen",
-      "item": "https://webcraft-studio.de/landing/webdesign-lokale-firmen-hannover.html"
+      "item": "https://webcraft-studio.de/landing/webdesign-lokale-firmen-melle.html"
     },
     {
       "@type": "ListItem",
@@ -563,6 +566,7 @@ body::before {
 </style>
 </head>
 <body>
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <!-- HEADER -->
 <header class="header" id="header">
@@ -581,6 +585,7 @@ body::before {
   </div>
 </header>
 
+<main>
 <!-- HERO -->
 <section class="lp-hero">
   <div class="hero-glow hero-glow-1"></div>
@@ -698,19 +703,19 @@ body::before {
     <div class="faq-list">
       
       <div class="faq-item reveal">
-        <button class="faq-q">Was kostet eine Website für lokale Firmen in Melle?<span class="faq-toggle">+</span></button>
+        <button class="faq-q" aria-expanded="false">Was kostet eine Website für lokale Firmen in Melle?<span class="faq-toggle">+</span></button>
         <div class="faq-a"><p>WEBCRAFT erstellt Websites für lokale Unternehmen in Melle zum transparenten Festpreis. Im kostenlosen Erstgespräch klären wir Ihren Bedarf und erstellen ein individuelles Angebot.</p></div>
       </div>
       <div class="faq-item reveal reveal-d1">
-        <button class="faq-q">Warum braucht mein lokales Geschäft in Melle eine Website?<span class="faq-toggle">+</span></button>
+        <button class="faq-q" aria-expanded="false">Warum braucht mein lokales Geschäft in Melle eine Website?<span class="faq-toggle">+</span></button>
         <div class="faq-a"><p>Über 87% der Verbraucher googeln bevor sie ein lokales Unternehmen besuchen. Ohne Website verlieren Sie diese Kunden an die Konkurrenz. Eine professionelle Website schafft Vertrauen und generiert rund um die Uhr Anfragen.</p></div>
       </div>
       <div class="faq-item reveal reveal-d2">
-        <button class="faq-q">Werde ich mit meiner Firma in Melle bei Google gefunden?<span class="faq-toggle">+</span></button>
+        <button class="faq-q" aria-expanded="false">Werde ich mit meiner Firma in Melle bei Google gefunden?<span class="faq-toggle">+</span></button>
         <div class="faq-a"><p>Ja. Wir optimieren Ihre Website für lokale Suchanfragen in Melle und Umgebung. Zusätzlich helfen wir bei der Einrichtung und Optimierung Ihres Google My Business Profils.</p></div>
       </div>
       <div class="faq-item reveal reveal-d3">
-        <button class="faq-q">Muss ich technisches Wissen mitbringen?<span class="faq-toggle">+</span></button>
+        <button class="faq-q" aria-expanded="false">Muss ich technisches Wissen mitbringen?<span class="faq-toggle">+</span></button>
         <div class="faq-a"><p>Nein. Wir kümmern uns um alles — Design, Technik, Texte und SEO. Sie liefern Ihre Wünsche und Inhalte, wir setzen alles professionell um.</p></div>
       </div>
     </div>
@@ -821,6 +826,7 @@ body::before {
     </form>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -847,17 +853,17 @@ body::before {
       </div>
       <div class="footer-col">
         <h4>Rechtliches</h4>
-        <a href="../index.html">Impressum</a>
-        <a href="../index.html">Datenschutz</a>
-        <a href="../index.html">AGB</a>
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="../agb.html">AGB</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 WEBCRAFT. Alle Rechte vorbehalten.</p>
       <div class="footer-socials">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="LinkedIn">LI</a>
-        <a href="#" aria-label="Dribbble">DR</a>
+        <a href="https://www.instagram.com/webcraft.studio" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/company/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a>
+        <a href="https://dribbble.com/webcraft-studio" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">DR</a>
       </div>
     </div>
   </div>
@@ -897,8 +903,14 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
     const wasActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
-    if (!wasActive) item.classList.add('active');
+    document.querySelectorAll('.faq-item.active').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!wasActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
