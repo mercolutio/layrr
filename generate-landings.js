@@ -345,6 +345,7 @@ function generateHTML(branche, stadt) {
 <title>${title}</title>
 <meta name="description" content="${metaDescription}">
 <meta name="keywords" content="Webdesign ${stadtName}, ${branche.keywords}, Website ${stadtName}, Homepage ${stadtName}">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="canonical" href="${canonicalUrl}">
 
 <!-- Geo Meta Tags -->
