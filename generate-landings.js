@@ -244,7 +244,7 @@ function generateHTML(branche, stadt) {
       "name": `LAYRR — Webdesign für ${branche.name} in ${stadtName}`,
       "description": metaDescription,
       "url": canonicalUrl,
-      "telephone": "+49 123 456 7890",
+      "telephone": "+49 (0) 5308 93503 50",
       "email": "info@layrr.de",
       "address": {
         "@type": "PostalAddress",
@@ -335,7 +335,7 @@ function generateHTML(branche, stadt) {
   ).join('\n');
 
   // Zusammenfassungstext für LLM/AI-Crawler (natürlicher Fließtext)
-  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 123 456 7890.`;
+  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 (0) 5308 93503 50.`;
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -800,7 +800,7 @@ body::before {
       <div class="section-tag">Über diesen Service</div>
       <h2 class="section-heading">Webdesign-Agentur für <em>${branche.name}</em> in ${stadtName}</h2>
       <article class="lp-summary-text">
-        <p><strong>LAYRR</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@layrr.de</strong> oder telefonisch unter <strong>+49 123 456 7890</strong>.</p>
+        <p><strong>LAYRR</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@layrr.de</strong> oder telefonisch unter <strong>+49 (0) 5308 93503 50</strong>.</p>
       </article>
     </div>
   </div>
@@ -891,7 +891,7 @@ body::before {
         </div>
         <div>
           <div class="cd-label">Telefon</div>
-          <div class="cd-value">+49 123 456 7890</div>
+          <div class="cd-value">+49 (0) 5308 93503 50</div>
         </div>
       </div>
       <div class="contact-detail">
@@ -1100,7 +1100,7 @@ Niedersachsen, Deutschland. Städte: ${staedte.map(s => s.name).join(', ')}.
 
 - Website: https://layrr.de
 - E-Mail: info@layrr.de
-- Telefon: +49 123 456 7890
+- Telefon: +49 (0) 5308 93503 50
 
 ## Landing Pages
 
