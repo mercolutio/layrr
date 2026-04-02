@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Arial, sans-serif; font-size: 14px; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 24px; line-height: 1.6; }
+  h1 { font-size: 22px; color: #111; border-bottom: 3px solid #c8ff00; padding-bottom: 8px; background: #050505; color: #c8ff00; padding: 16px 20px; border-radius: 6px; }
+  h2 { font-size: 16px; margin-top: 28px; margin-bottom: 8px; color: #111; }
+  h3 { font-size: 14px; font-weight: bold; color: #333; margin: 16px 0 4px; }
+  .summary { background: #f5f5f5; border-left: 4px solid #555; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 16px 0; }
+  .p0 { background: #fff0f0; border-left: 4px solid #e53935; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 12px 0; }
+  .p1 { background: #fff8e1; border-left: 4px solid #f9a825; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 12px 0; }
+  .p2 { background: #e8f5e9; border-left: 4px solid #43a047; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 12px 0; }
+  .good { background: #e8f5e9; border-left: 4px solid #43a047; padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 12px 0; }
+  code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 12px; }
+  .filepath { background: #e8eaf6; padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 12px; color: #3949ab; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { background: #050505; color: #c8ff00; padding: 8px 12px; text-align: left; }
+  td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .badge-p0 { background: #e53935; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+  .badge-p1 { background: #f9a825; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+  .badge-p2 { background: #43a047; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+  .badge-ok { background: #78909c; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+  ul { margin: 8px 0; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- EMAIL HEADER -->
+<p style="color:#666;font-size:12px;margin-bottom:4px;">An: d.schloesser@mercolutio.com</p>
+<p style="color:#666;font-size:12px;margin-bottom:20px;">Betreff: LAYRR Weekly Health Check — 02. April 2026</p>
+
+<h1>🔍 LAYRR Website Health Check — 02. April 2026</h1>
+
+<!-- EXECUTIVE SUMMARY -->
+<h2>Executive Summary</h2>
+<div class="summary">
+  <p>Das LAYRR-Repository (layrr.de) ist in einem <strong>soliden technischen Grundzustand</strong>: 202 HTML-Seiten, vollständige Schema.org-Auszeichnung, korrekte Geo-Targeting-Metadaten auf allen 196 Landing Pages und saubere Accessibility-Implementierung. Die kritischsten Probleme sind <strong>rechtlicher Natur</strong> — Impressum und Datenschutzerklärung enthalten noch Template-Platzhalter (Namen, Adresse, USt-ID), die öffentlich sichtbar sind und bei einer Abmahnung Risiken bergen. Daneben fehlen zwei wichtige Dateien: <code>404.html</code> und <code>favicon.ico</code>. SEO-technisch gibt es ein merkliches Thin-Content-Risiko durch die hohe strukturelle Gleichförmigkeit der Landing Pages (~95% identisches HTML-Gerüst). Keine Broken Links, keine Platzhalter-Bugs in generierten Seiten, kein fehlender <code>rel="noopener"</code> — diese Bereiche sind sauber.</p>
+</div>
+
+<!-- P0 KRITISCHE BUGS -->
+<h2><span class="badge-p0">P0</span> Kritische Bugs — sofort beheben</h2>
+
+<div class="p0">
+  <h3>1. Impressum: Template-Platzhalter öffentlich sichtbar</h3>
+  <p><strong>Datei:</strong> <span class="filepath">impressum.html</span></p>
+  <ul>
+    <li>Zeile 52: <code>[Vor- und Nachname des Inhabers]</code></li>
+    <li>Zeile 53: <code>[Straße und Hausnummer]</code></li>
+    <li>Zeile 54: <code>[PLZ und Ort]</code></li>
+    <li>Zeile 64: <code>[USt-IdNr. eintragen]</code></li>
+    <li>Zeile 67: <code>[Vor- und Nachname]</code> und <code>[Adresse wie oben]</code></li>
+  </ul>
+  <p><strong>Problem:</strong> Das Impressum ist gemäß § 5 TMG eine Pflichtangabe. Unvollständige Pflichtangaben sind abmahnfähig. Diese Platzhalter sind live auf layrr.de sichtbar.</p>
+  <p><strong>Fix:</strong> Echte Inhaberdaten eintragen: vollständiger Name, Straße + Hausnummer, PLZ + Ort, USt-IdNr. (oder Hinweis auf Kleinunternehmerregelung). Falls noch keine USt-ID vorliegt: <code>Gemäß §19 UStG wird keine Umsatzsteuer berechnet.</code> verwenden.</p>
+</div>
+
+<div class="p0">
+  <h3>2. Datenschutzerklärung: Hosting-Anbieter nicht genannt</h3>
+  <p><strong>Datei:</strong> <span class="filepath">datenschutz.html</span></p>
+  <ul>
+    <li>Zeile 64: <code>[Hosting-Anbieter und dessen Datenschutzbestimmungen eintragen]</code></li>
+    <li>Zeile 72: <code>[Vor- und Nachname]</code> und <code>[Adresse]</code></li>
+  </ul>
+  <p><strong>Problem:</strong> Art. 13 DSGVO verlangt die Nennung der verantwortlichen Stelle und der Auftragsverarbeiter (inkl. Hosting). Fehlende Angaben sind abmahnfähig.</p>
+  <p><strong>Fix:</strong> Hosting-Anbieter eintragen (z.B. GitHub Pages: "GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">Datenschutzerklärung</a>"). Außerdem: Name + Adresse der verantwortlichen Person ergänzen.</p>
+</div>
+
+<!-- P1 SEO-PROBLEME -->
+<h2><span class="badge-p1">P1</span> SEO-Probleme — zeitnah adressieren</h2>
+
+<div class="p1">
+  <h3>3. Fehlende 404-Seite</h3>
+  <p><strong>Datei fehlt:</strong> <span class="filepath">404.html</span> (nicht vorhanden)</p>
+  <p><strong>Problem:</strong> Ohne eigene 404-Seite liefert GitHub Pages eine generische Fehlerseite ohne Navigation. Nutzer verlassen die Seite sofort → höhere Bounce Rate → negative UX-Signale für Google.</p>
+  <p><strong>Fix:</strong> <span class="filepath">404.html</span> im Root anlegen, im gleichen Design wie die anderen Seiten, mit Link zur Startseite und zu den wichtigsten Landing Pages.</p>
+</div>
+
+<div class="p1">
+  <h3>4. favicon.ico fehlt — nur favicon.svg vorhanden</h3>
+  <p><strong>Datei fehlt:</strong> <span class="filepath">favicon.ico</span></p>
+  <p><strong>Problem:</strong> Safari (iOS), ältere Browser und manche Crawler fordern automatisch <code>/favicon.ico</code> an. Ohne diese Datei entstehen 404-Requests im Server-Log, was Crawling-Budget verbraucht.</p>
+  <p><strong>Fix:</strong> <code>favicon.ico</code> generieren (z.B. via realfavicongenerator.net) und im Root ablegen.</p>
+</div>
+
+<div class="p1">
+  <h3>5. Thin Content / Duplicate Content: ~95% strukturell identische Landing Pages</h3>
+  <p><strong>Betroffene Dateien:</strong> <span class="filepath">landing/*.html</span> (196 Seiten)</p>
+  <p><strong>Problem:</strong> Alle 196 Landing Pages haben exakt dasselbe HTML-Gerüst. Der einzige varierende Content ist: Stadtname, Branchenname, 4 FAQs und Geo-Koordinaten. Google bewertet rein template-generierte Seiten mit minimalem einzigartigem Textinhalt als "Thin Content" (Panda-Filter). Bei 196 nahezu identischen Seiten droht ein Sitewide-Penalty oder Deindexierung der Landing Pages.</p>
+  <p><strong>Fix-Vorschläge:</strong></p>
+  <ul>
+    <li>Für jede Stadt 2–3 stadtspezifische Sätze ergänzen (z.B. lokale Marktinfos, Bezirksnamen, lokale Konkurrenzhinweise)</li>
+    <li>Alternativer Ansatz: Nur Top-10-Städte vollständig ausbauen, Rest auf <code>noindex</code> setzen bis Content aufgebaut ist</li>
+    <li>Mindest-Wortzahl pro Seite erhöhen: aktuell schätzungsweise ~300–400 Wörter echten Textinhalt — Ziel: 600+ Wörter pro Seite</li>
+    <li>Branchenspezifische Absätze in <code>generate-landings.js</code> um stadtbezogene Variablen erweitern</li>
+  </ul>
+</div>
+
+<div class="p1">
+  <h3>6. Kein hreflang — fehlende internationale Signale</h3>
+  <p><strong>Datei:</strong> <span class="filepath">index.html</span> (und alle anderen)</p>
+  <p><strong>Problem:</strong> Keine <code>&lt;link rel="alternate" hreflang="de"&gt;</code> Tags. Google bevorzugt explizite Sprachsignale, besonders wenn die Site auch österreichische/Schweizer Besucher hat.</p>
+  <p><strong>Fix:</strong> Im <code>&lt;head&gt;</code> ergänzen:
+    <br><code>&lt;link rel="alternate" hreflang="de-DE" href="https://layrr.de/"&gt;</code>
+    <br><code>&lt;link rel="alternate" hreflang="x-default" href="https://layrr.de/"&gt;</code>
+  </p>
+</div>
+
+<div class="p1">
+  <h3>7. Google Fonts: IP-Übertragung nicht in Datenschutzerklärung abgedeckt</h3>
+  <p><strong>Datei:</strong> <span class="filepath">datenschutz.html</span>, Zeile 79–80</p>
+  <p><strong>Problem:</strong> Google Fonts wird via externe URL eingebunden (Zeile 13 in allen HTML-Dateien: <code>fonts.googleapis.com</code>). Dadurch wird die IP-Adresse des Besuchers an Google übertragen. Dies ist zwar in der Datenschutzerklärung erwähnt, aber ohne Rechtsgrundlage (Art. 6 DSGVO) und ohne Opt-out-Möglichkeit. Laut EuGH/LG München I ist diese Einbindung ohne Einwilligung problematisch.</p>
+  <p><strong>Fix-Optionen:</strong></p>
+  <ul>
+    <li><strong>Empfohlen:</strong> Fonts self-hosten — Schriften herunterladen (google-webfonts-helper.herokuapp.com), in <code>/fonts/</code> ablegen, <code>@font-face</code> CSS ergänzen, externe Google-URL entfernen</li>
+    <li>Alternativ: Cookie-Banner mit Einwilligung für Google Fonts einführen</li>
+  </ul>
+</div>
+
+<div class="p1">
+  <h3>8. Datenschutzerklärung: Keine Rechtsgrundlage für Google Fonts genannt</h3>
+  <p><strong>Datei:</strong> <span class="filepath">datenschutz.html</span>, Zeile 79–80</p>
+  <p><strong>Problem:</strong> Der vorhandene Google-Fonts-Abschnitt nennt keine Rechtsgrundlage (Art. 6 Abs. 1 DSGVO). Pflichtangabe gemäß Art. 13 Abs. 1 lit. c DSGVO.</p>
+  <p><strong>Fix:</strong> Ergänzen: <em>"Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung). Sie können der Verarbeitung widersprechen, indem Sie Google Fonts in Ihrem Browser deaktivieren."</em> — oder Fonts self-hosten (s.o.).</p>
+</div>
+
+<!-- P2 VERBESSERUNGEN -->
+<h2><span class="badge-p2">P2</span> Verbesserungen — nice to have</h2>
+
+<div class="p2">
+  <h3>9. llms.txt vorhanden — aber kein <code>X-Robots-Tag</code> für AI-Crawler</h3>
+  <p><strong>Datei:</strong> <span class="filepath">llms.txt</span> (23.420 Bytes, vorhanden ✓)</p>
+  <p><strong>Problem:</strong> llms.txt ist gut strukturiert. Aber: Kein explizites Allow/Disallow für AI-Crawler wie GPTBot, ClaudeBot, PerplexityBot in <span class="filepath">robots.txt</span>.</p>
+  <p><strong>Fix:</strong> In <span class="filepath">robots.txt</span> ergänzen:
+    <br><code>User-agent: GPTBot</code> / <code>Allow: /</code>
+    <br><code>User-agent: ClaudeBot</code> / <code>Allow: /</code>
+    <br>Und Verweis auf llms.txt: <code># LLM-optimized content: https://layrr.de/llms.txt</code>
+  </p>
+</div>
+
+<div class="p2">
+  <h3>10. robots.txt: Kein Disallow für /landing/ — alle Seiten gleichzeitig crawlen</h3>
+  <p><strong>Datei:</strong> <span class="filepath">robots.txt</span></p>
+  <p><strong>Problem:</strong> Aktuell: <code>Allow: /</code> für alle. Mit 196 Landing Pages kann Google das Crawl-Budget ineffizient einsetzen, falls Thin Content erkannt wird.</p>
+  <p><strong>Fix (erst nach Content-Aufbau):</strong> Crawl-Rate mit <code>Crawl-delay</code> steuern oder low-value Seiten temporär via <code>noindex</code> ausblenden bis Content aufgebaut ist.</p>
+</div>
+
+<div class="p2">
+  <h3>11. Keine <code>article</code>-Elemente im semantischen HTML</h3>
+  <p><strong>Datei:</strong> Alle Landing Pages</p>
+  <p><strong>Problem:</strong> FAQ-Einträge, Leistungsblöcke und Problemkarten sind in <code>&lt;div&gt;</code>-Containern. Für Screenreader und AI-Parser wären <code>&lt;article&gt;</code> oder <code>&lt;section&gt;</code> mit <code>aria-labelledby</code> semantisch sinnvoller.</p>
+  <p><strong>Fix:</strong> FAQ-Container in <code>&lt;article&gt;</code> umwandeln, Leistungsblöcke in <code>&lt;section&gt;</code>. Niedrige Priorität — keine WCAG-Verletzung.</p>
+</div>
+
+<div class="p2">
+  <h3>12. Kein <code>preload</code> für kritische Schriften</h3>
+  <p><strong>Datei:</strong> Alle HTML-Dateien, <code>&lt;head&gt;</code></p>
+  <p><strong>Problem:</strong> Google Fonts wird nur mit <code>preconnect</code> vorbereitet, aber kein <code>&lt;link rel="preload"&gt;</code> für die wichtigste Schriftgewichtung (700, Plus Jakarta Sans). LCP könnte verbessert werden.</p>
+  <p><strong>Fix (nach Self-Hosting):</strong> <code>&lt;link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin&gt;</code></p>
+</div>
+
+<div class="p2">
+  <h3>13. Kein Open Graph Image für Landing Pages überprüfbar</h3>
+  <p><strong>Datei:</strong> <span class="filepath">landing/*.html</span></p>
+  <p><strong>Problem:</strong> OG-Images verweisen auf <code>https://layrr.de/layrr-profile.png</code> (1200x630). Das ist ein generisches Bild für alle 196 Seiten — keine stadtspezifischen Social-Preview-Bilder.</p>
+  <p><strong>Fix (optional):</strong> Automatisch generierte OG-Images mit Stadtname per Netlify/Vercel Edge Function oder statischen Templates erstellen.</p>
+</div>
+
+<!-- POSITIVES -->
+<h2>✅ Was gut funktioniert</h2>
+<div class="good">
+  <ul>
+    <li><strong>Schema.org vollständig:</strong> ProfessionalService + FAQPage + GeoCoordinates auf allen 196 Landing Pages korrekt implementiert</li>
+    <li><strong>Geo-Targeting:</strong> geo.region, geo.placename, geo.position, ICBM auf jeder Landing Page — exakte Koordinaten und PLZ pro Stadt</li>
+    <li><strong>Keine Broken Links:</strong> Alle internen Links funktionieren, keine <code>href="#"</code>-Platzhalter</li>
+    <li><strong>rel="noopener noreferrer":</strong> Auf allen target="_blank"-Links vorhanden</li>
+    <li><strong>Accessibility:</strong> aria-label auf Burger-Button + Social-Links, aria-expanded auf FAQ-Accordions, korrekte Form-Labels, noscript-Fallback vorhanden</li>
+    <li><strong>Google Fonts display=swap:</strong> Auf allen Seiten korrekt implementiert</li>
+    <li><strong>Heading-Hierarchie:</strong> Genau 1 H1 pro Seite, korrekte H1→H2→H3-Struktur</li>
+    <li><strong>robots.txt + sitemap.xml:</strong> Vorhanden und korrekt verlinkt</li>
+    <li><strong>llms.txt:</strong> 23KB, gut strukturiert — GEO-Optimierung bereits angedacht</li>
+    <li><strong>Template-Generator sauber:</strong> Keine unreplaceden Platzhalter in generierten Seiten (<code>{stadt}</code> wird korrekt ersetzt)</li>
+    <li><strong>Kein Cookie-Banner nötig:</strong> Kein Tracking-Code → DSGVO-konform (außer Google Fonts, s.o.)</li>
+    <li><strong>noindex auf Rechtsseiten:</strong> Impressum, Datenschutz, AGB korrekt mit <code>noindex, follow</code></li>
+  </ul>
+</div>
+
+<!-- ZUSAMMENFASSUNGSTABELLE -->
+<h2>Zusammenfassung</h2>
+<table>
+  <tr>
+    <th>Prio</th>
+    <th>#</th>
+    <th>Issue</th>
+    <th>Datei</th>
+    <th>Zeile(n)</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><span class="badge-p0">P0</span></td>
+    <td>1</td>
+    <td>Impressum: 5× Template-Platzhalter (Name, Adresse, USt-ID)</td>
+    <td><code>impressum.html</code></td>
+    <td>52–54, 64, 67</td>
+    <td>🔴 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p0">P0</span></td>
+    <td>2</td>
+    <td>Datenschutz: Hosting-Anbieter + verantwortliche Person fehlen</td>
+    <td><code>datenschutz.html</code></td>
+    <td>64, 72</td>
+    <td>🔴 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>3</td>
+    <td>404.html fehlt komplett</td>
+    <td>— fehlt —</td>
+    <td>—</td>
+    <td>🟡 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>4</td>
+    <td>favicon.ico fehlt (nur .svg vorhanden)</td>
+    <td>— fehlt —</td>
+    <td>—</td>
+    <td>🟡 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>5</td>
+    <td>Thin Content: 196 Landing Pages ~95% identisch</td>
+    <td><code>landing/*.html</code></td>
+    <td>alle</td>
+    <td>🟡 In Arbeit</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>6</td>
+    <td>Keine hreflang-Tags</td>
+    <td>Alle HTML</td>
+    <td>&lt;head&gt;</td>
+    <td>🟡 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>7</td>
+    <td>Google Fonts extern: IP-Übertragung an Google (LG München I)</td>
+    <td>Alle HTML</td>
+    <td>Z. 41 (landing)</td>
+    <td>🟡 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p1">P1</span></td>
+    <td>8</td>
+    <td>Datenschutz: Rechtsgrundlage für Google Fonts fehlt</td>
+    <td><code>datenschutz.html</code></td>
+    <td>79–80</td>
+    <td>🟡 Offen</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p2">P2</span></td>
+    <td>9</td>
+    <td>robots.txt: Keine AI-Crawler-Direktiven</td>
+    <td><code>robots.txt</code></td>
+    <td>alle</td>
+    <td>🟢 Optional</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p2">P2</span></td>
+    <td>10</td>
+    <td>Crawl-Budget für 196 Landing Pages optimieren</td>
+    <td><code>robots.txt</code></td>
+    <td>—</td>
+    <td>🟢 Optional</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p2">P2</span></td>
+    <td>11</td>
+    <td>Semantisches HTML: &lt;article&gt; für FAQ-Blöcke</td>
+    <td><code>landing/*.html</code></td>
+    <td>FAQ-Section</td>
+    <td>🟢 Optional</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p2">P2</span></td>
+    <td>12</td>
+    <td>Kein font preload (LCP-Optimierung)</td>
+    <td>Alle HTML</td>
+    <td>&lt;head&gt;</td>
+    <td>🟢 Optional</td>
+  </tr>
+  <tr>
+    <td><span class="badge-p2">P2</span></td>
+    <td>13</td>
+    <td>OG-Images: generisch für alle 196 Landing Pages</td>
+    <td><code>landing/*.html</code></td>
+    <td>og:image</td>
+    <td>🟢 Optional</td>
+  </tr>
+  <tr>
+    <td><span class="badge-ok">OK</span></td>
+    <td>—</td>
+    <td>Schema.org, Geo-Tags, Broken Links, Accessibility, noopener, Headings, sitemap, robots, llms.txt</td>
+    <td>—</td>
+    <td>—</td>
+    <td>✅ Sauber</td>
+  </tr>
+</table>
+
+<p style="color:#666;font-size:12px;margin-top:32px;border-top:1px solid #eee;padding-top:12px;">
+  Generiert: 02. April 2026 | Repo: mercolutio/layrr | Analysierte Dateien: 202 HTML, 1 JS, 3 Config<br>
+  Vorwoche: Kein Vergleichsreport vorhanden (erster automatisierter Check).
+</p>
+
+</body>
+</html>
