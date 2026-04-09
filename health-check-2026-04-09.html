@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>LAYRR Health Check — 09. April 2026</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #1a1a1a; margin: 0; padding: 32px 16px; line-height: 1.6; }
+  .email-wrap { max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.1); }
+  .email-header { background: #050505; color: #fff; padding: 40px 48px 32px; }
+  .email-header h1 { margin: 0 0 6px; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+  .email-header .subtitle { color: rgba(255,255,255,0.55); font-size: 0.9rem; margin: 0; }
+  .accent { color: #c8ff00; }
+  .email-body { padding: 40px 48px; }
+  h2 { font-size: 1.1rem; font-weight: 700; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+  h2:first-child { margin-top: 0; }
+  p { margin: 0 0 14px; color: #333; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; margin-right: 6px; }
+  .p0 { background: #fde8e8; color: #c0392b; }
+  .p1 { background: #fef3cd; color: #856404; }
+  .p2 { background: #e8f4fd; color: #1565c0; }
+  .ok { background: #e6f9f0; color: #1a7f4b; }
+  .finding { background: #fafafa; border-left: 3px solid #ddd; border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 12px 0; }
+  .finding.crit { border-left-color: #c0392b; background: #fff8f8; }
+  .finding.warn { border-left-color: #d68910; background: #fffdf0; }
+  .finding.info { border-left-color: #1565c0; background: #f7fbff; }
+  .finding h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+  .finding p { font-size: 0.875rem; margin: 4px 0; color: #444; }
+  code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; background: #f0f0f0; padding: 1px 5px; border-radius: 3px; color: #c0392b; }
+  .fix { color: #1a7f4b; font-weight: 600; }
+  .file { color: #555; font-style: italic; font-size: 0.8rem; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.875rem; }
+  th { background: #f5f5f5; padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #e0e0e0; }
+  td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .stat-box { background: #fafafa; border: 1px solid #e8e8e8; border-radius: 6px; padding: 16px; text-align: center; }
+  .stat-box .num { font-size: 2rem; font-weight: 800; line-height: 1; }
+  .stat-box .lbl { font-size: 0.75rem; color: #888; margin-top: 4px; }
+  .stat-box.red .num { color: #c0392b; }
+  .stat-box.orange .num { color: #d68910; }
+  .stat-box.blue .num { color: #1565c0; }
+  .stat-box.green .num { color: #1a7f4b; }
+  .email-footer { background: #f9f9f9; padding: 24px 48px; border-top: 1px solid #eee; font-size: 0.8rem; color: #888; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <div class="email-header">
+    <h1>LAYRR<span class="accent">.</span> Weekly Health Check</h1>
+    <p class="subtitle">Automatisierter Website-Audit — 09. April 2026</p>
+  </div>
+
+  <div class="email-body">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <h2>Executive Summary</h2>
+    <p>Der LAYRR-Website-Stack befindet sich in einem <strong>mittelmäßigen technischen Zustand</strong>. Die SEO-Infrastruktur der 198 Landing Pages ist solide aufgebaut (korrekte Canonical-Tags, Geo-Meta-Tags, Schema.org mit ProfessionalService + FAQPage), jedoch gibt es <strong>4 kritische P0-Bugs</strong>, die sofortige Aufmerksamkeit benötigen.</p>
+    <p>Die gravierendsten Probleme sind: Das <strong>Impressum enthält noch Template-Platzhalter</strong> (Verstoß TMG § 5), die Datenschutzerklärung ist unvollständig (Verstoß DSGVO), und die <code>og-image.jpg</code>-Datei fehlt komplett — alle Social Media Shares zeigen damit ein gebrochenes Bild. Zusätzlich hat ein Schema.org-Bug in den Breadcrumbs alle 198 Landing Pages betroffen.</p>
+    <p>On-Page-Stärken: korrekte Heading-Hierarchie (genau 1 H1 pro Seite), saubere Canonical-Tags, <code>display=swap</code> bei Google Fonts, vollständige OG-Tags, alle externen Links mit <code>rel="noopener noreferrer"</code>. Kein <code>href="#"</code>-Wildwuchs.</p>
+
+    <div class="summary-grid">
+      <div class="stat-box red"><div class="num">4</div><div class="lbl">P0 Kritische Bugs</div></div>
+      <div class="stat-box orange"><div class="num">6</div><div class="lbl">P1 SEO-Probleme</div></div>
+      <div class="stat-box blue"><div class="num">5</div><div class="lbl">P2 Verbesserungen</div></div>
+      <div class="stat-box green"><div class="num">198</div><div class="lbl">Landing Pages generiert</div></div>
+    </div>
+
+    <!-- P0 -->
+    <h2><span class="badge p0">P0</span> Kritische Bugs — sofort beheben</h2>
+
+    <div class="finding crit">
+      <h3><span class="badge p0">P0</span> Impressum: Template-Platzhalter nicht ersetzt</h3>
+      <p class="file">impressum.html — Zeilen 52–67</p>
+      <p>Drei Pflichtfelder nach <strong>§ 5 TMG</strong> enthalten noch Vorlagen-Text:</p>
+      <p>
+        Z. 52: <code>[Vor- und Nachname des Inhabers]</code><br>
+        Z. 53: <code>[Straße und Hausnummer]</code><br>
+        Z. 54: <code>[PLZ und Ort]</code><br>
+        Z. 64: <code>[USt-IdNr. eintragen]</code><br>
+        Z. 67: <code>[Vor- und Nachname]</code> + <code>[Adresse wie oben]</code>
+      </p>
+      <p><span class="fix">Fix:</span> Echter Inhabername, Anschrift und USt-IdNr eintragen. Bis zur Behebung ist die Website abmahnfähig.</p>
+    </div>
+
+    <div class="finding crit">
+      <h3><span class="badge p0">P0</span> Datenschutzerklärung: Platzhalter + fehlende Angaben</h3>
+      <p class="file">datenschutz.html — Zeilen 64 &amp; 72</p>
+      <p>
+        Z. 64: <code>[Hosting-Anbieter und dessen Datenschutzbestimmungen eintragen]</code><br>
+        Z. 72: <code>[Vor- und Nachname]</code> + <code>[Adresse]</code> (verantwortliche Stelle)<br>
+        Kein Abschnitt zu Cookie-Consent-Management, obwohl Google Fonts externe Verbindung aufbaut.
+      </p>
+      <p><span class="fix">Fix:</span> Hosting-Anbieter eintragen (aktuell: FTP-Host <code>zxg.a9a.mytemp.website</code> — Datenschutz des Hosters verlinken). Inhaberdaten ergänzen. Rechtliche Grundlage für Google Fonts (Art. 6 Abs. 1 lit. f DSGVO) explizit benennen oder Fonts lokal hosten.</p>
+    </div>
+
+    <div class="finding crit">
+      <h3><span class="badge p0">P0</span> og-image.jpg fehlt — 404 auf allen Social-Shares</h3>
+      <p class="file">index.html:19 + alle 198 Landing Pages</p>
+      <p>Alle Seiten referenzieren <code>https://layrr.de/og-image.jpg</code> — diese Datei existiert nicht im Repository und wird auch nicht deployt. Jeder Facebook/LinkedIn/WhatsApp-Share zeigt einen gebrochenen Platzhalter.</p>
+      <p><span class="fix">Fix:</span> <code>og-image.jpg</code> (1200×630 px) erstellen und in Root deployen. Datei zum Repo hinzufügen.</p>
+    </div>
+
+    <div class="finding crit">
+      <h3><span class="badge p0">P0</span> BreadcrumbList Schema: Position 2 und 3 identische URL</h3>
+      <p class="file">generate-landings.js:320–328 → betrifft alle 198 Landing Pages</p>
+      <p>Im generierten Schema.org-Breadcrumb zeigen Position 2 und Position 3 auf exakt dieselbe URL:</p>
+      <p>
+        Position 2 <code>name</code>: <code>"Webdesign für Solarfirmen"</code> → <code>item</code>: <code>…/webdesign-solarfirmen-hannover.html</code><br>
+        Position 3 <code>name</code>: <code>"Solarfirmen in Hannover"</code> → <code>item</code>: <code>…/webdesign-solarfirmen-hannover.html</code>
+      </p>
+      <p>Google markiert doppelte Breadcrumb-URLs im Rich Results Test als Fehler.</p>
+      <p><span class="fix">Fix Option A (minimal):</span> Breadcrumb auf 2 Ebenen reduzieren (Home → Aktuelle Seite). <br>
+      <span class="fix">Fix Option B (ideal):</span> Kategorie-Seiten pro Branche anlegen (<code>/landing/webdesign-solarfirmen.html</code>) und Position 2 darauf verweisen lassen.</p>
+    </div>
+
+    <!-- P1 -->
+    <h2><span class="badge p1">P1</span> SEO-Probleme — diese Woche beheben</h2>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> Homepage: Geo-Meta-Tags fehlen</h3>
+      <p class="file">index.html — fehlt komplett im &lt;head&gt;</p>
+      <p>Alle 198 Landing Pages haben korrekte Geo-Tags (<code>geo.region</code>, <code>geo.placename</code>, <code>geo.position</code>, <code>ICBM</code>), aber die Homepage hat keinen einzigen.</p>
+      <p><span class="fix">Fix:</span> In index.html nach <code>&lt;link rel="canonical"&gt;</code> einfügen:</p>
+      <p><code>&lt;meta name="geo.region" content="DE-NI"&gt;</code><br>
+      <code>&lt;meta name="geo.placename" content="Niedersachsen"&gt;</code><br>
+      <code>&lt;meta name="geo.position" content="52.6367;9.8451"&gt;</code><br>
+      <code>&lt;meta name="ICBM" content="52.6367, 9.8451"&gt;</code></p>
+    </div>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> Null interne Verlinkung: Homepage → Landing Pages</h3>
+      <p class="file">index.html — keine einzige Referenz auf /landing/*</p>
+      <p>Die Homepage verlinkt nicht auf eine einzige der 198 Landing Pages. Google kann diese Seiten zwar via Sitemap entdecken, aber der interne PageRank-Fluss ist vollständig unterbrochen. Cross-Linking zwischen Landing Pages existiert ebenfalls nicht.</p>
+      <p><span class="fix">Fix:</span> Auf der Homepage eine "Für wen?" oder "Branchen"-Sektion mit Links zu den 6 Branchenkategorien ergänzen. Alternativ: Footer-Navigation mit den wichtigsten Städten/Branchen.</p>
+    </div>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> 94 % Duplicate Content zwischen Landing Pages</h3>
+      <p class="file">landing/webdesign-solarfirmen-hannover.html vs. webdesign-solarfirmen-braunschweig.html</p>
+      <p>Diff-Analyse: Von 932 Zeilen unterscheiden sich nur ~52 Zeilen (5,6 %). Der Rest ist identischer CSS, JS und struktureller HTML-Content. Cross-Industry-Vergleich (Solarfirmen vs. Werkstätten Hannover): ebenfalls ~93 % identisch. Google kann die 198 Seiten als Thin-Content-Farm klassifizieren.</p>
+      <p><span class="fix">Fix:</span> Pro Branche 2–3 zusätzliche einzigartige Absätze mit lokalen Signalen generieren (z. B. Marktdaten der Stadt, lokale Wirtschaftskennzahlen, stadtspezifische Herausforderungen für die Branche).</p>
+    </div>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> Kein Cookie-Consent-Banner</h3>
+      <p class="file">Alle HTML-Dateien — kein consent-Management gefunden</p>
+      <p>Google Fonts wird von externen Google-Servern geladen (IP-Adresse des Besuchers wird an Google übermittelt). Es existiert kein Cookie-Banner, keine Consent-Logik und kein Opt-in-Mechanismus. Die DSGVO-Rechtsprechung (LG München 2022) sieht dies ohne Einwilligung als rechtswidrig.</p>
+      <p><span class="fix">Fix Option A (einfach):</span> Google Fonts selbst hosten — <code>npm install fontsource-plus-jakarta-sans</code> oder von <code>fonts.google.com</code> herunterladen.<br>
+      <span class="fix">Fix Option B:</span> Leichtgewichtigen Consent-Banner integrieren (z. B. Klaro.js, ca. 12 KB).</p>
+    </div>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> 404-Seite fehlt</h3>
+      <p class="file">/ — keine 404.html im Repository</p>
+      <p>Bei defekten Links oder fehlgetippten URLs wird die Hosting-Standard-404 angezeigt (kein Branding, kein CTA, kein Link zurück zur Homepage).</p>
+      <p><span class="fix">Fix:</span> <code>404.html</code> im Design der Homepage erstellen mit Navigation zurück und einem Kontakt-CTA.</p>
+    </div>
+
+    <div class="finding warn">
+      <h3><span class="badge p1">P1</span> favicon.ico fehlt</h3>
+      <p class="file">/ — nur favicon.svg vorhanden</p>
+      <p><code>favicon.svg</code> ist vorhanden und wird korrekt referenziert. Aber Browser-Tools, Bookmark-Manager, Slack-Link-Previews und einige SEO-Crawler erwarten <code>favicon.ico</code>. Fehlt diese Datei, erzeugt jeder Seitenaufruf einen 404-Request in Server-Logs.</p>
+      <p><span class="fix">Fix:</span> 32×32 <code>favicon.ico</code> aus der SVG generieren (z. B. mit Squoosh, RealFaviconGenerator.net) und in Root ablegen.</p>
+    </div>
+
+    <!-- P2 -->
+    <h2><span class="badge p2">P2</span> Verbesserungen — Nice-to-have</h2>
+
+    <div class="finding info">
+      <h3><span class="badge p2">P2</span> WCAG-Kontrast: --text-tertiary unterschreitet AA</h3>
+      <p class="file">index.html:85 — verwendet an 16 Stellen (Z. 445, 483, 677, 828, 889, 1016 u. a.)</p>
+      <p><code>--text-tertiary: rgba(255,255,255,0.3)</code> ergibt auf <code>#050505</code> Background ein effektives Kontrastverhältnis von <strong>~2.7:1</strong>. WCAG AA verlangt 4.5:1 für Normaltext. Betroffen: Zeitmesser, Rollen-Labels bei Testimonials, Footer-Subtext.</p>
+      <p><span class="fix">Fix:</span> <code>--text-tertiary</code> auf <code>rgba(255,255,255,0.45)</code> anheben (~4.6:1) oder betroffene Elemente in <code>--text-secondary</code> (rgba 0.5 → ~5.2:1) überführen.</p>
+    </div>
+
+    <div class="finding info">
+      <h3><span class="badge p2">P2</span> Dekorative SVG-Icons ohne aria-hidden</h3>
+      <p class="file">index.html — multiple Inline-SVGs ohne aria-Attribut</p>
+      <p>Inline-SVGs für Feature-Checkmarks, Pfeile und dekorative Elemente haben weder <code>aria-hidden="true"</code> noch <code>&lt;title&gt;</code>-Tag. Screen Reader lesen diese als leere interaktive Elemente vor.</p>
+      <p><span class="fix">Fix:</span> Allen dekorativen SVGs <code>aria-hidden="true"</code> hinzufügen. Nur SVGs, die inhaltliche Information tragen, benötigen einen <code>&lt;title&gt;</code>.</p>
+    </div>
+
+    <div class="finding info">
+      <h3><span class="badge p2">P2</span> health-check-*.html Dateien öffentlich erreichbar</h3>
+      <p class="file">health-check-2026-04-02.html (18.6 KB), health-check-2026-04-09.html</p>
+      <p>Diese Audit-Dateien werden mitdeployt und sind öffentlich unter <code>https://layrr.de/health-check-*.html</code> erreichbar. Sie enthalten interne Analyse-Details.</p>
+      <p><span class="fix">Fix:</span> In <code>.github/workflows/deploy.yml</code> und <code>deploy.py</code> <code>health-check-*.html</code> zu den Exclude-Patterns hinzufügen. <code>robots.txt</code> um <code>Disallow: /health-check-</code> ergänzen.</p>
+    </div>
+
+    <div class="finding info">
+      <h3><span class="badge p2">P2</span> Kein hreflang (niedrige Priorität)</h3>
+      <p class="file">Alle HTML-Dateien</p>
+      <p>Da die Website ausschließlich auf Deutsch ist, ist hreflang technisch nicht notwendig. Jedoch könnte <code>&lt;link rel="alternate" hreflang="de-DE"&gt;</code> helfen, die Zielregion für Google explizit zu signalisieren.</p>
+    </div>
+
+    <div class="finding info">
+      <h3><span class="badge p2">P2</span> Inline-Style in index.html</h3>
+      <p class="file">index.html:1698</p>
+      <p><code>style="margin-bottom: 12px;"</code> — ein einziger Inline-Style, der leicht in eine CSS-Klasse ausgelagert werden könnte. Minor.</p>
+    </div>
+
+    <!-- POSITIVES -->
+    <h2><span class="badge ok">OK</span> Was gut funktioniert</h2>
+    <table>
+      <tr><th>Bereich</th><th>Befund</th></tr>
+      <tr><td>Title-Tags</td><td>Alle einzigartig, korrekte Länge (36–51 Zeichen), Keyword + Markenname</td></tr>
+      <tr><td>Meta-Descriptions</td><td>Alle unique, innerhalb 89–151 Zeichen, Call-to-Action vorhanden</td></tr>
+      <tr><td>Canonical Tags</td><td>Alle 199 Seiten korrekt mit absoluter URL</td></tr>
+      <tr><td>Open Graph</td><td>og:title, og:description, og:url, og:image, og:image:width/height — komplett</td></tr>
+      <tr><td>Heading-Hierarchie</td><td>Genau 1 H1 pro Seite, H2 &gt; H3 korrekt verschachtelt</td></tr>
+      <tr><td>Semantisches HTML</td><td>&lt;header&gt;, &lt;main&gt;, &lt;nav&gt;, &lt;footer&gt;, &lt;article&gt; auf Landing Pages vorhanden</td></tr>
+      <tr><td>Geo-Meta-Tags</td><td>Alle 198 Landing Pages haben geo.region, geo.placename, geo.position, ICBM</td></tr>
+      <tr><td>Schema.org</td><td>ProfessionalService + FAQPage + BreadcrumbList (bis auf URL-Bug) vollständig</td></tr>
+      <tr><td>Google Fonts</td><td>display=swap auf allen Seiten korrekt</td></tr>
+      <tr><td>noscript</td><td>Fallback für JS-Animationen vorhanden (index.html:1586)</td></tr>
+      <tr><td>Externe Links</td><td>Alle target="_blank" Links haben rel="noopener noreferrer"</td></tr>
+      <tr><td>href="#" Links</td><td>Keine Platzhalter-Links gefunden</td></tr>
+      <tr><td>robots.txt</td><td>Korrekt konfiguriert, Sitemap-Referenz vorhanden</td></tr>
+      <tr><td>sitemap.xml</td><td>Alle 202 URLs enthalten, korrekte changefreq + priority + lastmod</td></tr>
+      <tr><td>llms.txt</td><td>23.4 KB — umfassende Agentur-Dokumentation für LLM-Crawler</td></tr>
+      <tr><td>Template-Bugs</td><td>Kein einziger {stadt}-Platzhalter in generierten Dateien nicht ersetzt</td></tr>
+      <tr><td>Impressum/AGB Links</td><td>Alle 3 Rechtsseiten korrekt im Footer verlinkt</td></tr>
+      <tr><td>AGB</td><td>Komplett ausgefüllt, keine Platzhalter</td></tr>
+      <tr><td>CI/CD</td><td>GitHub Actions deploy.yml korrekt konfiguriert</td></tr>
+      <tr><td>favicon.svg</td><td>Vorhanden und korrekt referenziert</td></tr>
+    </table>
+
+    <!-- SUMMARY TABLE -->
+    <h2>Zusammenfassung aller Findings</h2>
+    <table>
+      <tr>
+        <th>Prio</th>
+        <th>Issue</th>
+        <th>Datei</th>
+        <th>Zeile(n)</th>
+        <th>Betroffene Seiten</th>
+      </tr>
+      <tr>
+        <td><span class="badge p0">P0</span></td>
+        <td>Impressum: Platzhalter nicht ersetzt (TMG § 5)</td>
+        <td><code>impressum.html</code></td>
+        <td>52–67</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p0">P0</span></td>
+        <td>Datenschutz: Platzhalter + fehlende DSGVO-Angaben</td>
+        <td><code>datenschutz.html</code></td>
+        <td>64, 72</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p0">P0</span></td>
+        <td>og-image.jpg fehlt → 404 auf Social Shares</td>
+        <td><code>/og-image.jpg</code></td>
+        <td>—</td>
+        <td>199</td>
+      </tr>
+      <tr>
+        <td><span class="badge p0">P0</span></td>
+        <td>Breadcrumb Schema: Position 2 = Position 3 URL</td>
+        <td><code>generate-landings.js</code></td>
+        <td>320–328</td>
+        <td>198</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>Geo-Meta-Tags auf Homepage fehlen</td>
+        <td><code>index.html</code></td>
+        <td>nach Z.9</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>Keine interne Verlinkung Homepage → Landing Pages</td>
+        <td><code>index.html</code></td>
+        <td>—</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>~94 % Duplicate Content zwischen Landing Pages</td>
+        <td><code>generate-landings.js</code></td>
+        <td>—</td>
+        <td>198</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>Google Fonts ohne Cookie-Consent (DSGVO)</td>
+        <td>Alle HTML-Dateien</td>
+        <td>—</td>
+        <td>200+</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>404.html fehlt</td>
+        <td><code>/404.html</code></td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge p1">P1</span></td>
+        <td>favicon.ico fehlt</td>
+        <td><code>/favicon.ico</code></td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge p2">P2</span></td>
+        <td>--text-tertiary Kontrast ~2.7:1 (WCAG AA: 4.5:1)</td>
+        <td><code>index.html</code></td>
+        <td>85, 445, 483, 677+</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p2">P2</span></td>
+        <td>Dekorative SVGs ohne aria-hidden</td>
+        <td><code>index.html</code></td>
+        <td>mehrere</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><span class="badge p2">P2</span></td>
+        <td>health-check-*.html wird öffentlich deployt</td>
+        <td><code>deploy.yml</code>, <code>deploy.py</code></td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><span class="badge p2">P2</span></td>
+        <td>Kein hreflang tag</td>
+        <td>Alle HTML-Dateien</td>
+        <td>—</td>
+        <td>200+</td>
+      </tr>
+      <tr>
+        <td><span class="badge p2">P2</span></td>
+        <td>1 Inline-Style (margin-bottom: 12px)</td>
+        <td><code>index.html</code></td>
+        <td>1698</td>
+        <td>1</td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="email-footer">
+    Generiert am 09.04.2026 · LAYRR Health Check Audit · Repository: /home/user/layrr<br>
+    An: d.schloesser@mercolutio.com · Betreff: LAYRR Weekly Health Check — 09. April 2026
+  </div>
+
+</div>
+</body>
+</html>
