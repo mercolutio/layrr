@@ -12,7 +12,7 @@
 
 ## Branchen
 
-- Solarfirmen: Solarfirma, Photovoltaik, PV-Anlage, Solaranlage, Solarteur
+- Solarfirmen: Solarfirma, Solarinstallateur, Photovoltaik, PV-Anlage, Solaranlage, Solarteur, Fachbetrieb
 - Wärmepumpenfirmen: Wärmepumpe, Heizung, Wärmepumpen-Installation, Heiztechnik, Energieberatung
 - SHK-Betriebe: SHK, Sanitär, Heizung, Klima, Klempner, Installateur, Badsanierung
 - Lokale Firmen: lokales Unternehmen, Firma, Geschäft, Dienstleister, regional
