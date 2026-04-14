@@ -1,41 +1,41 @@
 const fs = require('fs');
 const path = require('path');
 
-// ====== STÄDTE MIT GEO-KOORDINATEN ======
+// ====== STÄDTE MIT GEO-KOORDINATEN UND EINZIGARTIGEN DATEN ======
 const staedte = [
-  { name: 'Hannover', slug: 'hannover', lat: 52.3759, lng: 9.7320, plz: '30159' },
-  { name: 'Braunschweig', slug: 'braunschweig', lat: 52.2689, lng: 10.5268, plz: '38100' },
-  { name: 'Oldenburg', slug: 'oldenburg', lat: 53.1435, lng: 8.2146, plz: '26121' },
-  { name: 'Osnabrück', slug: 'osnabrueck', lat: 52.2799, lng: 8.0472, plz: '49074' },
-  { name: 'Wolfsburg', slug: 'wolfsburg', lat: 52.4227, lng: 10.7865, plz: '38440' },
-  { name: 'Göttingen', slug: 'goettingen', lat: 51.5413, lng: 9.9158, plz: '37073' },
-  { name: 'Salzgitter', slug: 'salzgitter', lat: 52.1547, lng: 10.3293, plz: '38226' },
-  { name: 'Hildesheim', slug: 'hildesheim', lat: 52.1508, lng: 9.9510, plz: '31134' },
-  { name: 'Delmenhorst', slug: 'delmenhorst', lat: 53.0511, lng: 8.6318, plz: '27749' },
-  { name: 'Wilhelmshaven', slug: 'wilhelmshaven', lat: 53.5308, lng: 8.1052, plz: '26382' },
-  { name: 'Lüneburg', slug: 'lueneburg', lat: 53.2494, lng: 10.4015, plz: '21335' },
-  { name: 'Celle', slug: 'celle', lat: 52.6224, lng: 10.0807, plz: '29221' },
-  { name: 'Garbsen', slug: 'garbsen', lat: 52.4186, lng: 9.5981, plz: '30823' },
-  { name: 'Hameln', slug: 'hameln', lat: 52.1036, lng: 9.3568, plz: '31785' },
-  { name: 'Lingen', slug: 'lingen', lat: 52.5225, lng: 7.3167, plz: '49808' },
-  { name: 'Langenhagen', slug: 'langenhagen', lat: 52.4386, lng: 9.7399, plz: '30853' },
-  { name: 'Nordhorn', slug: 'nordhorn', lat: 52.4324, lng: 7.0713, plz: '48529' },
-  { name: 'Wolfenbüttel', slug: 'wolfenbuettel', lat: 52.1642, lng: 10.5336, plz: '38300' },
-  { name: 'Goslar', slug: 'goslar', lat: 51.9060, lng: 10.4298, plz: '38640' },
-  { name: 'Peine', slug: 'peine', lat: 52.3193, lng: 10.2336, plz: '31224' },
-  { name: 'Emden', slug: 'emden', lat: 53.3669, lng: 7.2060, plz: '26721' },
-  { name: 'Cuxhaven', slug: 'cuxhaven', lat: 53.8617, lng: 8.6940, plz: '27472' },
-  { name: 'Stade', slug: 'stade', lat: 53.5977, lng: 9.4726, plz: '21682' },
-  { name: 'Melle', slug: 'melle', lat: 52.2037, lng: 8.3384, plz: '49324' },
-  { name: 'Neustadt am Rübenberge', slug: 'neustadt-am-ruebenberge', lat: 52.5061, lng: 9.4590, plz: '31535' },
-  { name: 'Laatzen', slug: 'laatzen', lat: 52.3161, lng: 9.7989, plz: '30880' },
-  { name: 'Buchholz', slug: 'buchholz', lat: 53.3264, lng: 9.8681, plz: '21244' },
-  { name: 'Wunstorf', slug: 'wunstorf', lat: 52.4262, lng: 9.4310, plz: '31515' },
-  { name: 'Barsinghausen', slug: 'barsinghausen', lat: 52.3037, lng: 9.4582, plz: '30890' },
-  { name: 'Seelze', slug: 'seelze', lat: 52.3953, lng: 9.5963, plz: '30926' },
-  { name: 'Lehrte', slug: 'lehrte', lat: 52.3727, lng: 9.9768, plz: '31275' },
-  { name: 'Achim', slug: 'achim', lat: 53.0135, lng: 9.0265, plz: '28832' },
-  { name: 'Uelzen', slug: 'uelzen', lat: 52.9655, lng: 10.5590, plz: '29525' },
+  { name: 'Hannover', slug: 'hannover', lat: 52.3759, lng: 9.7320, plz: '30159', einwohner: '545.000', region: 'Region Hannover', besonderheit: 'Landeshauptstadt und internationaler Messestandort', wirtschaft: 'Als Messestadt mit der weltweit größten Industriemesse (Hannover Messe) ist Hannover ein Hotspot für B2B-Unternehmen. Über 40.000 Unternehmen sind hier ansässig — wer online nicht sichtbar ist, verliert täglich Kunden an die digitale Konkurrenz.' },
+  { name: 'Braunschweig', slug: 'braunschweig', lat: 52.2689, lng: 10.5268, plz: '38100', einwohner: '250.000', region: 'Östliches Niedersachsen', besonderheit: 'Forschungsstadt mit der höchsten Dichte an Wissenschaftlern in Europa', wirtschaft: 'Braunschweig ist Deutschlands forschungsintensivste Stadt. Unternehmen profitieren von technikaffinen Kunden, die online recherchieren, bevor sie kaufen. Eine professionelle Website ist hier keine Option, sondern Pflicht.' },
+  { name: 'Oldenburg', slug: 'oldenburg', lat: 53.1435, lng: 8.2146, plz: '26121', einwohner: '172.000', region: 'Weser-Ems', besonderheit: 'Universitätsstadt und Zentrum der Weser-Ems-Region', wirtschaft: 'Oldenburg wächst stetig und ist wirtschaftliches Zentrum des Nordwestens. Die junge, universitätsgeprägte Bevölkerung erwartet moderne digitale Auftritte — veraltete Websites schrecken Kunden hier besonders ab.' },
+  { name: 'Osnabrück', slug: 'osnabrueck', lat: 52.2799, lng: 8.0472, plz: '49074', einwohner: '165.000', region: 'Osnabrücker Land', besonderheit: 'Friedensstadt und Standort an der Grenze zu NRW', wirtschaft: 'Osnabrücks Grenzlage zu NRW macht die Stadt zum Tor zwischen zwei Bundesländern. Unternehmen können hier Kunden aus beiden Regionen ansprechen — mit einer Website, die lokal für beide Einzugsgebiete optimiert ist.' },
+  { name: 'Wolfsburg', slug: 'wolfsburg', lat: 52.4227, lng: 10.7865, plz: '38440', einwohner: '125.000', region: 'Östliches Niedersachsen', besonderheit: 'Volkswagen-Stammstadt und eine der wirtschaftsstärksten Städte Deutschlands', wirtschaft: 'Wolfsburg hat dank VW eine der höchsten Kaufkräfte Niedersachsens. Die starke Automobilindustrie zieht Zulieferer, Dienstleister und Handwerker an — alle brauchen eine starke digitale Präsenz.' },
+  { name: 'Göttingen', slug: 'goettingen', lat: 51.5413, lng: 9.9158, plz: '37073', einwohner: '120.000', region: 'Südniedersachsen', besonderheit: 'Renommierte Universitätsstadt mit über 30.000 Studierenden', wirtschaft: 'Göttingen lebt von der Universität, Forschung und einem starken Mittelstand. Die junge, gebildete Zielgruppe informiert sich fast ausschließlich online — ohne moderne Website existieren Sie für diese Kunden nicht.' },
+  { name: 'Salzgitter', slug: 'salzgitter', lat: 52.1547, lng: 10.3293, plz: '38226', einwohner: '105.000', region: 'Südostniedersachsen', besonderheit: 'Industriestadt mit Schwerpunkt Stahl und Automobilzulieferung', wirtschaft: 'Salzgitter wandelt sich von der reinen Industriestadt zum modernen Wirtschaftsstandort. Lokale Unternehmen, die jetzt in ihre Online-Präsenz investieren, sichern sich einen Vorsprung im wachsenden regionalen Markt.' },
+  { name: 'Hildesheim', slug: 'hildesheim', lat: 52.1508, lng: 9.9510, plz: '31134', einwohner: '100.000', region: 'Innerstebergland', besonderheit: 'UNESCO-Weltkulturerbe-Stadt mit 1.200-jähriger Geschichte', wirtschaft: 'Hildesheim verbindet Tradition mit Moderne. Die Altstadt zieht Touristen an, der Mittelstand ist stark — und beide Zielgruppen suchen online. Eine Website, die Geschichte und Professionalität vereint, überzeugt hier besonders.' },
+  { name: 'Delmenhorst', slug: 'delmenhorst', lat: 53.0511, lng: 8.6318, plz: '27749', einwohner: '82.000', region: 'Oldenburger Land', besonderheit: 'Kreisfreie Stadt im Großraum Bremen-Oldenburg', wirtschaft: 'Zwischen Bremen und Oldenburg gelegen, profitiert Delmenhorst von beiden Metropolregionen. Lokale Unternehmen können mit gezielter lokaler SEO Kunden aus dem gesamten Großraum erreichen.' },
+  { name: 'Wilhelmshaven', slug: 'wilhelmshaven', lat: 53.5308, lng: 8.1052, plz: '26382', einwohner: '78.000', region: 'Friesland', besonderheit: 'Deutschlands größter Marinestandort und Nordsee-Hafenstadt', wirtschaft: 'Wilhelmshaven entwickelt sich mit dem LNG-Terminal und der Offshore-Windenergie zum Energiestandort der Zukunft. Unternehmen im Energiesektor und maritime Dienstleister brauchen hier eine zukunftsfähige digitale Präsenz.' },
+  { name: 'Lüneburg', slug: 'lueneburg', lat: 53.2494, lng: 10.4015, plz: '21335', einwohner: '78.000', region: 'Lüneburger Heide', besonderheit: 'Historische Salzstadt mit der Leuphana Universität', wirtschaft: 'Lüneburg ist eine der am schnellsten wachsenden Städte Niedersachsens. Die Nähe zu Hamburg, die Universität und der Tourismus in der Heide schaffen einen vielfältigen Markt — ideal für Unternehmen mit starker Online-Präsenz.' },
+  { name: 'Celle', slug: 'celle', lat: 52.6224, lng: 10.0807, plz: '29221', einwohner: '70.000', region: 'Südheide', besonderheit: 'Residenzstadt mit einem der schönsten Fachwerk-Altstädte Deutschlands', wirtschaft: 'Celle verbindet historischen Charme mit moderner Wirtschaft. Die Erdöl- und Erdgasindustrie, der Tourismus und ein starker Einzelhandel prägen die Stadt — online-affine Unternehmen haben hier klare Wettbewerbsvorteile.' },
+  { name: 'Garbsen', slug: 'garbsen', lat: 52.4186, lng: 9.5981, plz: '30823', einwohner: '63.000', region: 'Region Hannover', besonderheit: 'Drittgrößte Stadt der Region Hannover, direkt an der A2', wirtschaft: 'Garbsen wächst als Wohnstadt vor den Toren Hannovers stetig. Lokale Handwerker und Dienstleister bedienen sowohl Garbsen als auch den Hannoveraner Markt — eine lokal optimierte Website erreicht beide Zielgruppen.' },
+  { name: 'Hameln', slug: 'hameln', lat: 52.1036, lng: 9.3568, plz: '31785', einwohner: '58.000', region: 'Weserbergland', besonderheit: 'Die Rattenfängerstadt — weltbekannt durch die Sage und Weserrenaissance-Architektur', wirtschaft: 'Hameln ist Tourismusmagnet und Wirtschaftszentrum im Weserbergland. Über 800.000 Touristen jährlich suchen online nach lokalen Angeboten — Unternehmen mit guter Website profitieren direkt davon.' },
+  { name: 'Lingen', slug: 'lingen', lat: 52.5225, lng: 7.3167, plz: '49808', einwohner: '57.000', region: 'Emsland', besonderheit: 'Wirtschaftszentrum des Emslandes an der niederländischen Grenze', wirtschaft: 'Das Emsland gehört zu den wirtschaftsstärksten Regionen Deutschlands. Lingen als Zentrum profitiert von einer Mischung aus Industrie, Mittelstand und Grenzhandel — digitale Sichtbarkeit erschließt hier einen kaufkräftigen Markt.' },
+  { name: 'Langenhagen', slug: 'langenhagen', lat: 52.4386, lng: 9.7399, plz: '30853', einwohner: '55.000', region: 'Region Hannover', besonderheit: 'Standort des Flughafens Hannover-Langenhagen', wirtschaft: 'Der Flughafen macht Langenhagen zum internationalen Tor Niedersachsens. Hotels, Logistik, Gastronomie und Dienstleister rund um den Airport brauchen eine professionelle Online-Präsenz für Kunden aus aller Welt.' },
+  { name: 'Nordhorn', slug: 'nordhorn', lat: 52.4324, lng: 7.0713, plz: '48529', einwohner: '55.000', region: 'Grafschaft Bentheim', besonderheit: 'Grenzstadt zu den Niederlanden — die Wasserstadt', wirtschaft: 'Nordhorns Grenznähe zu den Niederlanden eröffnet Unternehmen einen binationalen Markt. Eine zweisprachig optimierte Website kann Kunden aus Deutschland und den Niederlanden gleichzeitig ansprechen.' },
+  { name: 'Wolfenbüttel', slug: 'wolfenbuettel', lat: 52.1642, lng: 10.5336, plz: '38300', einwohner: '52.000', region: 'Östliches Niedersachsen', besonderheit: 'Lessingstadt und historische Residenz mit Jägermeister-Hauptsitz', wirtschaft: 'Wolfenbüttel ist Heimat von Jägermeister und einer starken Kulturszene. Die Stadt zwischen Braunschweig und dem Harz zieht sowohl Touristen als auch Fachkräfte an — Unternehmen profitieren von einer lokal sichtbaren Website.' },
+  { name: 'Goslar', slug: 'goslar', lat: 51.9060, lng: 10.4298, plz: '38640', einwohner: '50.000', region: 'Harz', besonderheit: 'UNESCO-Weltkulturerbe-Stadt am Harz mit Kaiserpfalz', wirtschaft: 'Goslar ist das touristische Herz des Harzes. Über 1,5 Millionen Übernachtungen pro Jahr bedeuten eine riesige Zielgruppe, die online nach Restaurants, Hotels, Aktivitäten und Dienstleistern sucht.' },
+  { name: 'Peine', slug: 'peine', lat: 52.3193, lng: 10.2336, plz: '31224', einwohner: '50.000', region: 'Peiner Land', besonderheit: 'Stahlstadt zwischen Hannover und Braunschweig', wirtschaft: 'Peine liegt strategisch perfekt zwischen Hannover und Braunschweig an der A2. Unternehmen können hier zu niedrigeren Kosten operieren und trotzdem Kunden in beiden Großstädten erreichen — mit der richtigen Online-Strategie.' },
+  { name: 'Emden', slug: 'emden', lat: 53.3669, lng: 7.2060, plz: '26721', einwohner: '50.000', region: 'Ostfriesland', besonderheit: 'Seehafen- und VW-Standort in Ostfriesland', wirtschaft: 'Emden verbindet maritime Wirtschaft mit Automobilindustrie. Als VW-Standort und Seehafen bietet die Stadt einen einzigartigen Branchenmix — vom Hafenlogistiker bis zum Handwerker braucht hier jeder eine professionelle Website.' },
+  { name: 'Cuxhaven', slug: 'cuxhaven', lat: 53.8617, lng: 8.6940, plz: '27472', einwohner: '48.000', region: 'Elbe-Weser-Dreieck', besonderheit: 'Nordseeheilbad und Tor zum Weltnaturerbe Wattenmeer', wirtschaft: 'Cuxhaven lebt vom Tourismus und der maritimen Wirtschaft. Tausende Urlauber suchen jede Saison online nach Unterkünften, Restaurants und Erlebnissen — digitale Sichtbarkeit entscheidet hier über den Geschäftserfolg.' },
+  { name: 'Stade', slug: 'stade', lat: 53.5977, lng: 9.4726, plz: '21682', einwohner: '48.000', region: 'Altes Land', besonderheit: 'Hansestadt am Tor zum Alten Land, Europas größtem Obstanbaugebiet', wirtschaft: 'Stade profitiert von der Nähe zu Hamburg und dem boomenden Alten Land. Die Stadt wächst als attraktiver Wohnort — neue Bewohner suchen online nach lokalen Dienstleistern. Wer hier gut rankt, gewinnt.' },
+  { name: 'Melle', slug: 'melle', lat: 52.2037, lng: 8.3384, plz: '49324', einwohner: '47.000', region: 'Osnabrücker Land', besonderheit: 'Flächengrößte Stadt Niedersachsens mit starkem Mittelstand', wirtschaft: 'Melle ist die flächengrößte Stadt Niedersachsens und Heimat zahlreicher mittelständischer Weltmarktführer. Diese Hidden Champions brauchen eine digitale Visitenkarte, die ihrer Qualität gerecht wird.' },
+  { name: 'Neustadt am Rübenberge', slug: 'neustadt-am-ruebenberge', lat: 52.5061, lng: 9.4590, plz: '31535', einwohner: '45.000', region: 'Region Hannover', besonderheit: 'Flächengemeinde mit dem Steinhuder Meer als Tourismusmagnet', wirtschaft: 'Das Steinhuder Meer zieht jährlich über 2 Millionen Besucher an. Lokale Gastronomen, Freizeitanbieter und Dienstleister können mit einer starken Website diese riesige Besuchergruppe direkt ansprechen.' },
+  { name: 'Laatzen', slug: 'laatzen', lat: 52.3161, lng: 9.7989, plz: '30880', einwohner: '42.000', region: 'Region Hannover', besonderheit: 'Standort der Hannover Messe und EXPO-Gelände', wirtschaft: 'Laatzen ist durch das Messegelände international bekannt. Während der großen Messen strömen Hunderttausende Besucher in die Region — Unternehmen mit guter lokaler Sichtbarkeit profitieren direkt von diesem Traffic.' },
+  { name: 'Buchholz', slug: 'buchholz', lat: 53.3264, lng: 9.8681, plz: '21244', einwohner: '40.000', region: 'Nordheide', besonderheit: 'Wachstumsstadt in der Nordheide, südlich von Hamburg', wirtschaft: 'Buchholz wächst als beliebter Wohnort im Hamburger Speckgürtel stetig. Neue Einwohner bringen neue Nachfrage — nach Handwerkern, Ärzten, Dienstleistern. Wer hier online gut aufgestellt ist, wächst mit.' },
+  { name: 'Wunstorf', slug: 'wunstorf', lat: 52.4262, lng: 9.4310, plz: '31515', einwohner: '42.000', region: 'Region Hannover', besonderheit: 'Fliegerhorst-Stadt am Steinhuder Meer', wirtschaft: 'Wunstorf verbindet Naherholung am Steinhuder Meer mit der Nähe zur Landeshauptstadt. Die gute Verkehrsanbindung macht die Stadt attraktiv für Unternehmen, die Kunden in der gesamten Region Hannover bedienen.' },
+  { name: 'Barsinghausen', slug: 'barsinghausen', lat: 52.3037, lng: 9.4582, plz: '30890', einwohner: '35.000', region: 'Region Hannover', besonderheit: 'Deisterstadt am Rande des Calenberger Landes', wirtschaft: 'Am Deister gelegen, bietet Barsinghausen Lebensqualität mit Großstadtnähe. Lokale Unternehmen bedienen sowohl die Barsinghäuser als auch Pendler aus Hannover — eine lokal optimierte Website spricht beide Gruppen an.' },
+  { name: 'Seelze', slug: 'seelze', lat: 52.3953, lng: 9.5963, plz: '30926', einwohner: '34.000', region: 'Region Hannover', besonderheit: 'Westlich von Hannover an der Leine gelegen', wirtschaft: 'Seelze liegt direkt an der A2 und ist optimal angebunden. Gewerbebetriebe und Dienstleister profitieren von der zentralen Lage — mit einer gut rankenden Website erreichen sie den gesamten Westen der Region Hannover.' },
+  { name: 'Lehrte', slug: 'lehrte', lat: 52.3727, lng: 9.9768, plz: '31275', einwohner: '44.000', region: 'Region Hannover', besonderheit: 'Wichtiger Eisenbahnknoten östlich von Hannover', wirtschaft: 'Lehrte ist als Eisenbahnknoten historisch gewachsen und heute ein moderner Wirtschaftsstandort. Die neue ICE-Neubaustrecke stärkt die Bedeutung — Unternehmen, die jetzt digital investieren, profitieren vom Wachstum.' },
+  { name: 'Achim', slug: 'achim', lat: 53.0135, lng: 9.0265, plz: '28832', einwohner: '33.000', region: 'Landkreis Verden', besonderheit: 'Mittelstadt südöstlich von Bremen an der Weser', wirtschaft: 'Achim profitiert als Nachbarstadt von Bremen von der Metropolregion. Lokale Unternehmen erreichen mit einer optimierten Website sowohl den Achimer als auch den Bremer Markt — doppeltes Potenzial.' },
+  { name: 'Uelzen', slug: 'uelzen', lat: 52.9655, lng: 10.5590, plz: '29525', einwohner: '33.000', region: 'Lüneburger Heide', besonderheit: 'Hundertwasser-Bahnhof und Tor zur Lüneburger Heide', wirtschaft: 'Uelzen ist bekannt für den Hundertwasser-Bahnhof und die Lüneburger Heide. Der Tourismus und die starke Landwirtschaft prägen die Region — digitale Sichtbarkeit hilft Unternehmen, beide Märkte zu erschließen.' },
 ];
 
 // ====== BRANCHEN ======
@@ -236,6 +236,51 @@ function generateHTML(branche, stadt) {
         <div class="faq-a"><p>${faq.a}</p></div>
       </div>`).join('');
 
+  // ====== UNIQUE CITY SECTION ======
+  const stadtInfoHTML = `
+    <section class="section lp-stadtinfo">
+      <div class="container">
+        <div class="section-tag reveal">Webdesign in ${stadtName}</div>
+        <h2 class="section-heading reveal reveal-d1">Warum ${branche.name} in <em>${stadtName}</em> eine Website brauchen</h2>
+        <div class="lp-stadtinfo-content reveal reveal-d2">
+          <p>${stadtName} (${stadt.einwohner} Einwohner) ist ${stadt.besonderheit} in der Region ${stadt.region}. ${stadt.wirtschaft}</p>
+          <p>Als ${branche.name.endsWith('en') ? branche.name.slice(0, -1) : branche.name} in ${stadtName} stehen Sie vor einer klaren Entscheidung: Entweder Sie sind online für Ihre ${stadt.einwohner} potenziellen Kunden sichtbar — oder Ihre Konkurrenz ist es. LAYRR erstellt Ihnen eine Website, die nicht nur gut aussieht, sondern in ${stadtName} und der Region ${stadt.region} tatsächlich gefunden wird.</p>
+        </div>
+      </div>
+    </section>`;
+
+  // ====== CROSS-LINKING: Weitere Städte & Branchen ======
+  const andereStaedte = staedte
+    .filter(s => s.slug !== stadtSlug)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 8);
+  const crossStaedteHTML = andereStaedte.map(s =>
+    `<a href="webdesign-${branche.slug}-${s.slug}.html">${branche.name} in ${s.name}</a>`
+  ).join('');
+
+  const andereBranchen = branchen
+    .filter(b => b.slug !== branche.slug);
+  const crossBranchenHTML = andereBranchen.map(b =>
+    `<a href="webdesign-${b.slug}-${stadtSlug}.html">Webdesign für ${b.name} in ${stadtName}</a>`
+  ).join('');
+
+  const crossLinksHTML = `
+    <section class="section lp-crosslinks">
+      <div class="container">
+        <h2 class="section-heading reveal">Weitere <em>Städte</em> & Branchen</h2>
+        <div class="lp-crosslinks-grid">
+          <div class="lp-crosslinks-col reveal">
+            <h3>Webdesign für ${branche.name} in weiteren Städten</h3>
+            <div class="lp-crosslinks-list">${crossStaedteHTML}</div>
+          </div>
+          <div class="lp-crosslinks-col reveal reveal-d1">
+            <h3>Weitere Branchen in ${stadtName}</h3>
+            <div class="lp-crosslinks-list">${crossBranchenHTML}</div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+
   // Schema.org: LocalBusiness + Service + FAQPage + GeoCoordinates
   const schemaArray = [
     {
@@ -335,7 +380,7 @@ function generateHTML(branche, stadt) {
   ).join('\n');
 
   // Zusammenfassungstext für LLM/AI-Crawler (natürlicher Fließtext)
-  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 (0) 5308 93503 50.`;
+  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. ${stadtName} hat ${stadt.einwohner} Einwohner und ist ${stadt.besonderheit}. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 (0) 5308 93503 50.`;
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -344,7 +389,7 @@ function generateHTML(branche, stadt) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <meta name="description" content="${metaDescription}">
-<meta name="keywords" content="Webdesign ${stadtName}, ${branche.keywords}, Website ${stadtName}, Homepage ${stadtName}">
+<meta name="keywords" content="Webdesign ${stadtName}, ${branche.keywords}, Website ${stadtName}, Homepage ${stadtName}, Webseite erstellen ${stadtName}, Homepage erstellen lassen ${stadtName}, Internetseite ${stadtName}, Webdesigner ${stadtName}, Webdesign Agentur ${stadtName}">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="canonical" href="${canonicalUrl}">
 
@@ -627,6 +672,27 @@ body::before {
 .lp-ref-inner .section-tag { justify-content: center; }
 .lp-ref-inner .section-desc { margin: 0 auto 32px; }
 
+/* STADTINFO */
+.lp-stadtinfo { padding: 100px 0; }
+.lp-stadtinfo-content { max-width: 800px; }
+.lp-stadtinfo-content p { color: var(--text-secondary); font-size: 1.12rem; line-height: 1.8; margin-bottom: 20px; }
+.lp-stadtinfo-content p:first-child { color: var(--text); font-size: 1.2rem; }
+
+/* CROSS-LINKS */
+.lp-crosslinks { padding: 80px 0; border-top: 1px solid var(--border); }
+.lp-crosslinks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+.lp-crosslinks-col h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--text); }
+.lp-crosslinks-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.lp-crosslinks-list a {
+  display: inline-block; padding: 8px 18px; border-radius: 8px;
+  background: var(--bg-glass); border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 0.9rem; transition: all 0.3s var(--ease);
+}
+.lp-crosslinks-list a:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 768px) {
+  .lp-crosslinks-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* CTA BANNER */
 .lp-cta { background: var(--bg); padding: 100px 0; }
 .lp-cta-inner {
@@ -863,6 +929,10 @@ body::before {
     </div>
   </div>
 </section>
+
+${stadtInfoHTML}
+
+${crossLinksHTML}
 
 <!-- CTA BANNER -->
 <section class="lp-cta">
