@@ -7,6 +7,8 @@
 <meta name="description" content="Modernes Webdesign für kleine Unternehmen. In 7 Tagen online. Atemberaubend. Bezahlbar.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="canonical" href="https://layrr.de/">
+<link rel="alternate" hreflang="de" href="https://layrr.de/">
+<link rel="alternate" hreflang="x-default" href="https://layrr.de/">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
 <!-- Open Graph -->
@@ -31,23 +33,51 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "name": "LAYRR",
+  "alternateName": "LAYRR Webdesign",
   "url": "https://layrr.de",
-  "description": "Modernes Webdesign für kleine Unternehmen. In 7 Tagen online.",
+  "logo": "https://layrr.de/og-image.jpg",
+  "image": "https://layrr.de/og-image.jpg",
+  "description": "Modernes Webdesign für kleine Unternehmen in Niedersachsen. Spezialisiert auf Solarfirmen, Wärmepumpenfirmen, SHK-Betriebe, Werkstätten, KFZ-Gutachter und lokale Firmen. In 7 Tagen online.",
   "email": "info@layrr.de",
-  "telephone": "+49 (0) 5308 93503 50",
+  "telephone": "+495308935030",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Berliner Straße 60",
+    "addressLocality": "Lehre",
+    "postalCode": "38165",
     "addressRegion": "Niedersachsen",
     "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.3224,
+    "longitude": 10.6651
   },
   "areaServed": {
     "@type": "State",
     "name": "Niedersachsen"
   },
-  "serviceType": "Webdesign",
-  "priceRange": "$$"
+  "serviceType": ["Webdesign", "SEO", "Branding", "Website-Wartung"],
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.instagram.com/layrr.de",
+    "https://www.linkedin.com/company/layrr",
+    "https://dribbble.com/layrr"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "STKom mbH",
+    "legalName": "Softwaregesellschaft für Technik und Kommunikation mbH"
+  },
+  "knowsAbout": ["Webdesign", "SEO", "Solarfirmen Webdesign", "SHK-Betriebe Webdesign", "Wärmepumpenfirmen Webdesign", "KFZ-Gutachter Webdesign", "Werkstätten Webdesign", "Lokale Firmen Webdesign"]
 }
 </script>
 <script type="application/ld+json">
@@ -82,7 +112,7 @@
   --border-hover: rgba(255,255,255,0.12);
   --text: #ffffff;
   --text-secondary: rgba(255,255,255,0.5);
-  --text-tertiary: rgba(255,255,255,0.3);
+  --text-tertiary: rgba(255,255,255,0.46);
   --accent: #c8ff00;
   --accent-dim: rgba(200,255,0,0.15);
   --accent-glow: rgba(200,255,0,0.08);

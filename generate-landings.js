@@ -59,6 +59,7 @@ const branchen = [
       { title: 'Referenz-Galerie', desc: 'Professionelle Darstellung Ihrer realisierten Solarprojekte mit Vorher-Nachher-Bildern.' },
     ],
     keywords: 'Solarfirma, Solarinstallateur, Photovoltaik, PV-Anlage, Solaranlage, Solarteur, Fachbetrieb',
+    stadtBranchenText: (stadt) => `Die Nachfrage nach Solaranlagen in ${stadt.name} steigt stetig — getrieben durch hohe Energiepreise und attraktive Förderprogramme. Hausbesitzer in ${stadt.region} suchen online nach zuverlässigen Solarinstallateuren. Mit einer professionellen Website positionieren Sie Ihren Solarbetrieb als erste Anlaufstelle für Photovoltaik in ${stadt.name} und Umgebung.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für eine Solarfirma in ${stadt}?`, a: `Eine professionelle Website für Solarinstallateure und Fachbetriebe in ${stadt} gibt es bei LAYRR ab einem Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein individuelles Angebot — transparent und ohne versteckte Kosten.` },
       { q: `Wie schnell ist die Website für meinen Solarbetrieb in ${stadt} fertig?`, a: `In der Regel ist Ihre neue Website innerhalb von 7 Werktagen online. Wir arbeiten effizient und halten Sie über den gesamten Prozess auf dem Laufenden.` },
@@ -85,6 +86,7 @@ const branchen = [
       { title: 'Vertrauens-Elemente', desc: 'Zertifikate, Herstellerpartner und Kundenbewertungen professionell präsentiert.' },
     ],
     keywords: 'Wärmepumpe, Heizung, Wärmepumpen-Installation, Heiztechnik, Energieberatung',
+    stadtBranchenText: (stadt) => `Das Heizungsgesetz und steigende Gaspreise machen Wärmepumpen in ${stadt.name} zur gefragtesten Heiztechnologie. Hausbesitzer in ${stadt.region} informieren sich online über Installateure und Kosten. Wer als Wärmepumpenfirma in ${stadt.name} digital nicht präsent ist, überlässt diese Anfragen der Konkurrenz.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für Wärmepumpenfirmen in ${stadt}?`, a: `LAYRR bietet Websites für Wärmepumpenfirmen in ${stadt} zum Festpreis an. Im kostenlosen Erstgespräch klären wir den Umfang und erstellen ein transparentes Angebot ohne versteckte Kosten.` },
       { q: `Wie werden Wärmepumpenfirmen in ${stadt} online gefunden?`, a: `Durch gezielte lokale SEO-Optimierung für Suchbegriffe wie „Wärmepumpe ${stadt}", „Heizung erneuern ${stadt}" und „Wärmepumpen-Installateur ${stadt}". Wir optimieren Ihre Website technisch und inhaltlich für maximale Sichtbarkeit.` },
@@ -111,6 +113,7 @@ const branchen = [
       { title: 'Bewertungen', desc: 'Integration von Google-Bewertungen und Kundenstimmen für maximales Vertrauen.' },
     ],
     keywords: 'SHK, Sanitär, Heizung, Klima, Klempner, Installateur, Badsanierung',
+    stadtBranchenText: (stadt) => `SHK-Betriebe in ${stadt.name} stehen unter starkem Wettbewerbsdruck — 87% der Kunden googeln, bevor sie einen Installateur beauftragen. In ${stadt.region} suchen Hausbesitzer nach Klempnern, Heizungsbauern und Badsanierern mit guten Bewertungen und professionellem Auftritt. Eine moderne Website ist für SHK-Betriebe in ${stadt.name} der entscheidende Wettbewerbsvorteil.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für SHK-Betriebe in ${stadt}?`, a: `Professionelle Websites für SHK-Betriebe in ${stadt} bieten wir zum Festpreis an. Im kostenlosen Erstgespräch besprechen wir Ihren Bedarf — ob Sanitär, Heizung oder Klimatechnik — und erstellen ein individuelles Angebot.` },
       { q: `Kann eine Notdienst-Funktion integriert werden?`, a: `Ja. Wir integrieren eine prominente Notdienst-Sektion mit Click-to-Call-Funktion, damit Ihre Kunden Sie in ${stadt} bei Rohrbrüchen oder Heizungsausfällen sofort erreichen können.` },
@@ -137,6 +140,7 @@ const branchen = [
       { title: 'Kontaktoptimierung', desc: 'Click-to-Call, Anfahrtskarte und einfache Kontaktmöglichkeiten für mehr Kundenanfragen.' },
     ],
     keywords: 'lokales Unternehmen, Firma, Geschäft, Dienstleister, regional',
+    stadtBranchenText: (stadt) => `${stadt.name} mit ${stadt.einwohner} Einwohnern bietet lokalen Unternehmen einen starken regionalen Markt. Doch die Konkurrenz schläft nicht — in ${stadt.region} sind immer mehr Firmen online präsent. Wer als lokales Unternehmen in ${stadt.name} noch keine professionelle Website hat, wird von Kunden schlicht nicht gefunden und verliert Umsatz an digital besser aufgestellte Wettbewerber.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für lokale Firmen in ${stadt}?`, a: `LAYRR erstellt Websites für lokale Unternehmen in ${stadt} zum transparenten Festpreis. Im kostenlosen Erstgespräch klären wir Ihren Bedarf und erstellen ein individuelles Angebot.` },
       { q: `Warum braucht mein lokales Geschäft in ${stadt} eine Website?`, a: `Über 87% der Verbraucher googeln bevor sie ein lokales Unternehmen besuchen. Ohne Website verlieren Sie diese Kunden an die Konkurrenz. Eine professionelle Website schafft Vertrauen und generiert rund um die Uhr Anfragen.` },
@@ -163,6 +167,7 @@ const branchen = [
       { title: 'Bewertungsintegration', desc: 'Google-Bewertungen und Kundenstimmen prominent auf Ihrer Website präsentiert.' },
     ],
     keywords: 'Werkstatt, KFZ-Werkstatt, Autowerkstatt, Reparatur, Inspektion',
+    stadtBranchenText: (stadt) => `Autofahrer in ${stadt.name} vergleichen Werkstätten online — Bewertungen, Preistransparenz und ein professioneller Webauftritt entscheiden über die Werkstattwahl. In ${stadt.region} gibt es zahlreiche Werkstätten, aber nur wenige mit einer überzeugenden Online-Präsenz. Genau hier liegt Ihre Chance: Mit einer modernen Website heben Sie sich in ${stadt.name} von der Konkurrenz ab.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für Werkstätten in ${stadt}?`, a: `LAYRR bietet Websites für Werkstätten in ${stadt} zum Festpreis — transparent und ohne versteckte Kosten. Im kostenlosen Erstgespräch klären wir Ihren Bedarf.` },
       { q: `Kann eine Online-Terminbuchung integriert werden?`, a: `Ja. Wir integrieren ein benutzerfreundliches Terminbuchungs-System, damit Ihre Kunden in ${stadt} rund um die Uhr Termine online vereinbaren können — ohne Anruf.` },
@@ -189,6 +194,7 @@ const branchen = [
       { title: 'Qualifikations-Darstellung', desc: 'Zertifikate, Kammer-Zugehörigkeit und Spezialisierungen professionell präsentiert.' },
     ],
     keywords: 'KFZ-Gutachter, Sachverständiger, Unfallgutachten, KFZ-Sachverständiger, Schadensgutachten',
+    stadtBranchenText: (stadt) => `Nach einem Verkehrsunfall in ${stadt.name} suchen Geschädigte sofort online nach einem KFZ-Gutachter in der Nähe. In ${stadt.region} gibt es zwar erfahrene Sachverständige, aber nur wenige sind online professionell aufgestellt. Als KFZ-Gutachter in ${stadt.name} gewinnen Sie mit einer überzeugenden Website das Vertrauen von Unfallgeschädigten, Anwälten und Versicherungen.`,
     faqs: (stadt) => [
       { q: `Was kostet eine Website für KFZ-Gutachter in ${stadt}?`, a: `LAYRR erstellt professionelle Websites für KFZ-Gutachter in ${stadt} zum Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein transparentes Angebot.` },
       { q: `Wie finden Unfallgeschädigte in ${stadt} meinen Gutachter-Service?`, a: `Durch lokale SEO-Optimierung für Suchanfragen wie „KFZ-Gutachter ${stadt}", „Unfallgutachten ${stadt}" und „Sachverständiger ${stadt}". Wir sorgen dafür, dass Sie bei Google und in KI-Suchmaschinen gefunden werden.` },
@@ -236,15 +242,17 @@ function generateHTML(branche, stadt) {
         <div class="faq-a"><p>${faq.a}</p></div>
       </div>`).join('');
 
-  // ====== UNIQUE CITY SECTION ======
+  // ====== UNIQUE CITY + INDUSTRY SECTION ======
+  const branchenStadtText = branche.stadtBranchenText ? branche.stadtBranchenText(stadt) : '';
   const stadtInfoHTML = `
     <section class="section lp-stadtinfo">
       <div class="container">
-        <div class="section-tag reveal">Webdesign in ${stadtName}</div>
+        <div class="section-tag reveal">${branche.name} in ${stadtName}</div>
         <h2 class="section-heading reveal reveal-d1">Warum ${branche.name} in <em>${stadtName}</em> eine Website brauchen</h2>
         <div class="lp-stadtinfo-content reveal reveal-d2">
           <p>${stadtName} (${stadt.einwohner} Einwohner) ist ${stadt.besonderheit} in der Region ${stadt.region}. ${stadt.wirtschaft}</p>
-          <p>Als ${branche.name.endsWith('en') ? branche.name.slice(0, -1) : branche.name} in ${stadtName} stehen Sie vor einer klaren Entscheidung: Entweder Sie sind online für Ihre ${stadt.einwohner} potenziellen Kunden sichtbar — oder Ihre Konkurrenz ist es. LAYRR erstellt Ihnen eine Website, die nicht nur gut aussieht, sondern in ${stadtName} und der Region ${stadt.region} tatsächlich gefunden wird.</p>
+          <p>${branchenStadtText}</p>
+          <p>LAYRR erstellt Ihnen eine Website, die nicht nur gut aussieht, sondern in ${stadtName} und der Region ${stadt.region} tatsächlich gefunden wird — bei Google, in KI-Suchmaschinen und auf Google Maps. Vom ersten Konzept bis zum Launch in 7 Werktagen.</p>
         </div>
       </div>
     </section>`;
@@ -392,6 +400,8 @@ function generateHTML(branche, stadt) {
 <meta name="keywords" content="Webdesign ${stadtName}, ${branche.keywords}, Website ${stadtName}, Homepage ${stadtName}, Webseite erstellen ${stadtName}, Homepage erstellen lassen ${stadtName}, Internetseite ${stadtName}, Webdesigner ${stadtName}, Webdesign Agentur ${stadtName}">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="canonical" href="${canonicalUrl}">
+<link rel="alternate" hreflang="de" href="${canonicalUrl}">
+<link rel="alternate" hreflang="x-default" href="${canonicalUrl}">
 
 <!-- Geo Meta Tags -->
 <meta name="geo.region" content="DE-NI">
@@ -438,7 +448,7 @@ ${schemaScripts}
   --border-hover: rgba(255,255,255,0.12);
   --text: #ffffff;
   --text-secondary: rgba(255,255,255,0.5);
-  --text-tertiary: rgba(255,255,255,0.3);
+  --text-tertiary: rgba(255,255,255,0.46);
   --accent: #c8ff00;
   --accent-dim: rgba(200,255,0,0.15);
   --accent-glow: rgba(200,255,0,0.08);
