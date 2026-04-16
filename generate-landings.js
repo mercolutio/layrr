@@ -45,7 +45,7 @@ const branchen = [
     slug: 'solarfirmen',
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
     heroSub: (stadt) => `Professionelle Websites für Solarinstallateure und Fachbetriebe in ${stadt} — mehr Sichtbarkeit, mehr Anfragen, mehr Aufträge für Ihre Solarfirma.`,
-    metaDesc: (stadt) => `Webdesign für Solarfirmen und Solarinstallateure in ${stadt}. Moderne, SEO-optimierte Websites die Kunden bringen. In 7 Tagen online. Jetzt Erstgespräch!`,
+    metaDesc: (stadt) => `Webdesign für Solarfirmen und Solarinstallateure in ${stadt}. Moderne, SEO-optimierte Websites die Kunden bringen. In 7–10 Tagen online. Jetzt Erstgespräch!`,
     problems: [
       'Potenzielle Kunden suchen online nach Solaranlagen und Solarinstallateuren — ohne Website verlieren Sie Aufträge an die Konkurrenz',
       'Die Energiewende boomt, aber Ihr Fachbetrieb ist online nicht sichtbar',
@@ -61,7 +61,7 @@ const branchen = [
     keywords: 'Solarfirma, Solarinstallateur, Photovoltaik, PV-Anlage, Solaranlage, Solarteur, Fachbetrieb',
     faqs: (stadt) => [
       { q: `Was kostet eine Website für eine Solarfirma in ${stadt}?`, a: `Eine professionelle Website für Solarinstallateure und Fachbetriebe in ${stadt} gibt es bei LAYRR ab einem Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein individuelles Angebot — transparent und ohne versteckte Kosten.` },
-      { q: `Wie schnell ist die Website für meinen Solarbetrieb in ${stadt} fertig?`, a: `In der Regel ist Ihre neue Website innerhalb von 7 Werktagen online. Wir arbeiten effizient und halten Sie über den gesamten Prozess auf dem Laufenden.` },
+      { q: `Wie schnell ist die Website für meinen Solarbetrieb in ${stadt} fertig?`, a: `In der Regel ist Ihre neue Website innerhalb von 7–10 Werktagen online. Wir arbeiten effizient und halten Sie über den gesamten Prozess auf dem Laufenden.` },
       { q: `Wird mein Solarbetrieb in ${stadt} bei Google gefunden?`, a: `Ja. Jede Website wird von uns für lokale Suchanfragen wie „Solaranlage ${stadt}", „Solarinstallateur ${stadt}" und „Photovoltaik Fachbetrieb ${stadt}" optimiert. Wir setzen auf technische SEO, lokale Signale und strukturierte Daten.` },
       { q: `Welche Inhalte brauche ich für die Website meiner Solarfirma?`, a: `Idealerweise: Beschreibung Ihrer Leistungen (PV-Anlagen, Stromspeicher, Wallboxen), Referenzprojekte und Kontaktdaten. Auf Wunsch erstellen wir die Texte für Sie — branchenspezifisch und SEO-optimiert.` },
     ],
@@ -89,7 +89,7 @@ const branchen = [
       { q: `Was kostet eine Website für Wärmepumpenfirmen in ${stadt}?`, a: `LAYRR bietet Websites für Wärmepumpenfirmen in ${stadt} zum Festpreis an. Im kostenlosen Erstgespräch klären wir den Umfang und erstellen ein transparentes Angebot ohne versteckte Kosten.` },
       { q: `Wie werden Wärmepumpenfirmen in ${stadt} online gefunden?`, a: `Durch gezielte lokale SEO-Optimierung für Suchbegriffe wie „Wärmepumpe ${stadt}", „Heizung erneuern ${stadt}" und „Wärmepumpen-Installateur ${stadt}". Wir optimieren Ihre Website technisch und inhaltlich für maximale Sichtbarkeit.` },
       { q: `Können Sie auch Fördermittel-Informationen auf der Website darstellen?`, a: `Ja. Wir integrieren aktuelle Informationen zu Förderprogrammen (BAFA, KfW) übersichtlich auf Ihrer Website — ein wichtiger Vertrauensfaktor für potenzielle Kunden.` },
-      { q: `Wie lange dauert die Erstellung einer Wärmepumpen-Website?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7 Werktagen fertig und online — inklusive mobilfreundlichem Design, SEO-Optimierung und Kontaktformular.` },
+      { q: `Wie lange dauert die Erstellung einer Wärmepumpen-Website?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7–10 Werktagen fertig und online — inklusive mobilfreundlichem Design, SEO-Optimierung und Kontaktformular.` },
     ],
   },
   {
@@ -97,7 +97,7 @@ const branchen = [
     slug: 'shk-betriebe',
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
     heroSub: (stadt) => `Professionelle Websites für Sanitär-, Heizungs- und Klimabetriebe in ${stadt} — mehr Kunden durch starke Online-Präsenz.`,
-    metaDesc: (stadt) => `Webdesign für SHK-Betriebe in ${stadt}. Moderne Websites für Sanitär, Heizung & Klima. In 7 Tagen online. Jetzt kostenloses Erstgespräch!`,
+    metaDesc: (stadt) => `Webdesign für SHK-Betriebe in ${stadt}. Moderne Websites für Sanitär, Heizung & Klima. In 7–10 Tagen online. Jetzt kostenloses Erstgespräch!`,
     problems: [
       '87% der Kunden googeln bevor sie einen SHK-Betrieb beauftragen — ohne Website sind Sie unsichtbar',
       'Notdienst-Anfragen gehen an Betriebe die online sofort gefunden werden',
@@ -115,7 +115,7 @@ const branchen = [
       { q: `Was kostet eine Website für SHK-Betriebe in ${stadt}?`, a: `Professionelle Websites für SHK-Betriebe in ${stadt} bieten wir zum Festpreis an. Im kostenlosen Erstgespräch besprechen wir Ihren Bedarf — ob Sanitär, Heizung oder Klimatechnik — und erstellen ein individuelles Angebot.` },
       { q: `Kann eine Notdienst-Funktion integriert werden?`, a: `Ja. Wir integrieren eine prominente Notdienst-Sektion mit Click-to-Call-Funktion, damit Ihre Kunden Sie in ${stadt} bei Rohrbrüchen oder Heizungsausfällen sofort erreichen können.` },
       { q: `Wie wird mein SHK-Betrieb in ${stadt} bei Google sichtbar?`, a: `Durch lokale SEO-Optimierung für Suchbegriffe wie „Klempner ${stadt}", „Heizungsbauer ${stadt}" und „Sanitär Notdienst ${stadt}". Dazu optimieren wir Ihren Google My Business Eintrag und setzen strukturierte Daten ein.` },
-      { q: `Wie schnell bekomme ich meine SHK-Website?`, a: `In der Regel innerhalb von 7 Werktagen. Von der Erstberatung über das Konzept bis zum Launch — alles aus einer Hand, schnell und unkompliziert.` },
+      { q: `Wie schnell bekomme ich meine SHK-Website?`, a: `In der Regel innerhalb von 7–10 Werktagen. Von der Erstberatung über das Konzept bis zum Launch — alles aus einer Hand, schnell und unkompliziert.` },
     ],
   },
   {
@@ -123,7 +123,7 @@ const branchen = [
     slug: 'lokale-firmen',
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
     heroSub: (stadt) => `Professionelle Websites für lokale Unternehmen in ${stadt} — werden Sie online sichtbar und gewinnen Sie mehr Kunden aus Ihrer Region.`,
-    metaDesc: (stadt) => `Webdesign für lokale Firmen in ${stadt}. Moderne Websites die regional gefunden werden. In 7 Tagen online. Jetzt kostenloses Erstgespräch!`,
+    metaDesc: (stadt) => `Webdesign für lokale Firmen in ${stadt}. Moderne Websites die regional gefunden werden. In 7–10 Tagen online. Jetzt kostenloses Erstgespräch!`,
     problems: [
       'Ihre Kunden suchen lokal bei Google — ohne Website existieren Sie für sie nicht',
       'Social Media allein reicht nicht — eine eigene Website schafft Vertrauen und Professionalität',
@@ -167,7 +167,7 @@ const branchen = [
       { q: `Was kostet eine Website für Werkstätten in ${stadt}?`, a: `LAYRR bietet Websites für Werkstätten in ${stadt} zum Festpreis — transparent und ohne versteckte Kosten. Im kostenlosen Erstgespräch klären wir Ihren Bedarf.` },
       { q: `Kann eine Online-Terminbuchung integriert werden?`, a: `Ja. Wir integrieren ein benutzerfreundliches Terminbuchungs-System, damit Ihre Kunden in ${stadt} rund um die Uhr Termine online vereinbaren können — ohne Anruf.` },
       { q: `Wie wird meine Werkstatt in ${stadt} bei Google gefunden?`, a: `Durch lokale SEO-Optimierung für Suchbegriffe wie „KFZ-Werkstatt ${stadt}", „Autowerkstatt ${stadt}" und „Werkstatt in der Nähe". Wir sorgen dafür, dass Sie in der lokalen Suche ganz oben stehen.` },
-      { q: `Wie schnell ist meine Werkstatt-Website fertig?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7 Werktagen online — inklusive mobilfreundlichem Design, SEO und Kontaktformular.` },
+      { q: `Wie schnell ist meine Werkstatt-Website fertig?`, a: `Ihre professionelle Website ist in der Regel innerhalb von 7–10 Werktagen online — inklusive mobilfreundlichem Design, SEO und Kontaktformular.` },
     ],
   },
   {
@@ -193,7 +193,7 @@ const branchen = [
       { q: `Was kostet eine Website für KFZ-Gutachter in ${stadt}?`, a: `LAYRR erstellt professionelle Websites für KFZ-Gutachter in ${stadt} zum Festpreis. Im kostenlosen Erstgespräch besprechen wir Ihre Anforderungen und erstellen ein transparentes Angebot.` },
       { q: `Wie finden Unfallgeschädigte in ${stadt} meinen Gutachter-Service?`, a: `Durch lokale SEO-Optimierung für Suchanfragen wie „KFZ-Gutachter ${stadt}", „Unfallgutachten ${stadt}" und „Sachverständiger ${stadt}". Wir sorgen dafür, dass Sie bei Google und in KI-Suchmaschinen gefunden werden.` },
       { q: `Können Zertifikate und Qualifikationen auf der Website dargestellt werden?`, a: `Ja. Wir präsentieren Ihre Zertifizierungen, Kammer-Zugehörigkeit und Spezialisierungen professionell — das schafft Vertrauen bei Geschädigten, Anwälten und Versicherungen.` },
-      { q: `Wie schnell ist meine KFZ-Gutachter-Website fertig?`, a: `In der Regel innerhalb von 7 Werktagen. Schnelle Umsetzung ist gerade für KFZ-Gutachter wichtig — je früher Sie online sind, desto schneller kommen die Aufträge.` },
+      { q: `Wie schnell ist meine KFZ-Gutachter-Website fertig?`, a: `In der Regel innerhalb von 7–10 Werktagen. Schnelle Umsetzung ist gerade für KFZ-Gutachter wichtig — je früher Sie online sind, desto schneller kommen die Aufträge.` },
     ],
   },
 ];
@@ -380,7 +380,7 @@ function generateHTML(branche, stadt) {
   ).join('\n');
 
   // Zusammenfassungstext für LLM/AI-Crawler (natürlicher Fließtext)
-  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. ${stadtName} hat ${stadt.einwohner} Einwohner und ist ${stadt.besonderheit}. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 (0) 5308 93503 50.`;
+  const llmSummary = `LAYRR ist eine Webdesign-Agentur die professionelle Websites für ${branche.name} in ${stadtName}, Niedersachsen erstellt. ${stadtName} hat ${stadt.einwohner} Einwohner und ist ${stadt.besonderheit}. Der Service umfasst ${branche.leistungen.map(l => l.title).join(', ')}. Websites werden innerhalb von 7–10 Werktagen geliefert, sind mobilfreundlich, SEO-optimiert und DSGVO-konform. LAYRR bietet ein kostenloses Erstgespräch und arbeitet zu transparenten Festpreisen. Kontakt: info@layrr.de, Tel: +49 (0) 5308 93503 50.`;
 
   return `<!DOCTYPE html>
 <html lang="de">
@@ -867,7 +867,7 @@ body::before {
       <div class="section-tag">Über diesen Service</div>
       <h2 class="section-heading">Webdesign-Agentur für <em>${branche.name}</em> in ${stadtName}</h2>
       <article class="lp-summary-text">
-        <p><strong>LAYRR</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@layrr.de</strong> oder telefonisch unter <strong>+49 (0) 5308 93503 50</strong>.</p>
+        <p><strong>LAYRR</strong> ist eine Webdesign-Agentur mit Fokus auf <strong>${branche.name} in ${stadtName}</strong>, Niedersachsen. Wir erstellen professionelle, mobilfreundliche und SEO-optimierte Websites speziell für die Anforderungen von ${branche.name}. Unser Service umfasst <strong>${branche.leistungen.map(l => l.title).join('</strong>, <strong>')}</strong>. Jede Website wird innerhalb von <strong>7–10 Werktagen</strong> fertiggestellt, ist <strong>DSGVO-konform</strong> und wird zu einem transparenten <strong>Festpreis</strong> angeboten. Wir bieten ein <strong>kostenloses und unverbindliches Erstgespräch</strong> für ${branche.name} in ${stadtName} und Umgebung an. Kontaktieren Sie uns unter <strong>info@layrr.de</strong> oder telefonisch unter <strong>+49 (0) 5308 93503 50</strong>.</p>
       </article>
     </div>
   </div>
@@ -1154,7 +1154,7 @@ const llmsTxt = `# LAYRR — Webdesign-Agentur
 ## Angebot
 
 - Professionelles Webdesign zum Festpreis
-- Fertigstellung innerhalb von 7 Werktagen
+- Fertigstellung innerhalb von 7–10 Werktagen
 - SEO-Optimierung für lokale Suchanfragen
 - Mobilfreundliche, DSGVO-konforme Websites
 - Kostenloses und unverbindliches Erstgespräch
