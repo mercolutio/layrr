@@ -4,14 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projektübersicht
 
-LAYRR ist eine statisch generierte Marketing-Website für eine Webdesign-Agentur in Niedersachsen. Das Kernkonzept: Ein Node.js-Generator erzeugt kombinatorisch SEO-optimierte Landing Pages aus Städte- und Branchendaten (aktuell 33 Städte × 6 Branchen = 198 Seiten). Dazu kommen eine Hauptseite (`index.html`), rechtliche Seiten (`impressum.html`, `datenschutz.html`, `agb.html`) und ein Remotion-Videoprojekt.
+LAYRR ist eine statische Marketing-Website für eine Webdesign-Agentur in Niedersachsen. Der Scope ist bewusst klein gehalten: eine Hauptseite (`index.html`), drei rechtliche Seiten (`impressum.html`, `datenschutz.html`, `agb.html`) und ein Remotion-Videoprojekt im Unterordner `video/`.
+
+**Historischer Kontext:** Das Projekt enthielt zuvor einen Node.js-Generator (`generate-landings.js`), der 198 SEO-Landing-Pages unter `/landing/` erzeugte (33 Städte × 6 Branchen). Dieser Ansatz wurde verworfen — die Seiten waren aufgrund hoher Inhaltsähnlichkeit als Doorway-Pages zu klassifizieren und brachten kaum Impressionen. Generator und Landing-Ordner wurden entfernt. Falls wieder SEO-Skalierung benötigt wird, muss der Ansatz neu gedacht werden (echter Unique-Content pro Seite, nicht Template-Variation).
 
 ## Befehle
 
 ```bash
-# Landing Pages generieren (erzeugt alle HTML-Dateien in /landing/ + llms.txt im Root)
-node generate-landings.js
-
 # Video-Vorschau (Remotion im Browser)
 cd video && npm install && npm run preview
 
@@ -23,52 +22,30 @@ Es gibt kein Linting, keine Tests und kein Build-System für die Hauptseite — 
 
 ## Deployment
 
-Automatisch via GitHub Actions (`.github/workflows/deploy.yml`): Bei Push auf `main` wird per FTP deployed (SamKirkland/FTP-Deploy-Action). Ausgeschlossen vom Upload: `.git*`, `.github/`, `generate-landings.js`, `deploy.py`, `node_modules/`.
-
-**Wichtig:** Nach Änderungen am Generator muss `node generate-landings.js` lokal ausgeführt und die generierten HTML-Dateien commited werden — der Generator läuft nicht in CI.
+Automatisch via GitHub Actions (`.github/workflows/deploy.yml`): Bei Push auf `main` wird per FTP deployed (SamKirkland/FTP-Deploy-Action). Die Action synchronisiert den Arbeitsbaum mit dem Server — lokal gelöschte Dateien werden auch auf dem FTP-Host entfernt. Ausgeschlossen vom Upload: `.git*`, `.github/`, `deploy.py`, `node_modules/`.
 
 ## Architektur
 
-### Landing-Page-Generator (`generate-landings.js`)
-
-Einzelne Datei (~1.200 Zeilen) mit datentreibendem Template-System:
-
-- **`staedte[]`** (Zeile ~5–39) — Array von Stadt-Objekten mit: `name`, `slug`, `lat`/`lng`, `plz`, `einwohner`, `region`, `besonderheit`, `wirtschaft` (regionaler Wirtschaftstext)
-- **`branchen[]`** (Zeile ~42–300+) — Array von Branchen-Objekten mit: `name`, `slug`, `icon` (inline SVG), `heroSub(stadt)`, `metaDesc(stadt)`, `problems[]`, `leistungen[]`, `keywords`, `faqs(stadt)` (alle stadtabhängigen Felder sind Funktionen)
-- **`generateHTML(branche, stadt)`** — Erzeugt eine vollständige HTML-Seite inkl. CSS, JS, JSON-LD (ProfessionalService, FAQPage, BreadcrumbList), Cross-Linking und SEO-Meta-Tags
-- **Output-Schleife** — `branchen × staedte` erzeugt alle Kombinationen als statische HTML nach `landing/`
-- **`llms.txt`** (Zeile ~1150) — Wird am Ende ebenfalls generiert; enthält eine AI-lesbare Zusammenfassung aller Services und Links zu allen Landing Pages
-
-Dateinamenskonvention: `landing/webdesign-{branche.slug}-{stadt.slug}.html`
-
-Neue Städte oder Branchen werden als Datenobjekte in die jeweiligen Arrays eingefügt — der Generator erzeugt automatisch alle Kombinationen. Jede Landing Page ist eine vollständig eigenständige HTML-Datei mit eingebettetem CSS und JS (keine geteilten Assets).
-
-### Cross-Linking-Strategie
-
-Jede Landing Page enthält zwei Verlinkungs-Blöcke: 8 zufällig gewählte andere Städte derselben Branche und alle anderen Branchen derselben Stadt. Die Zufallsauswahl (`Math.random()`) bedeutet, dass jede Regenerierung leicht andere Cross-Links erzeugt.
-
 ### Hauptseite (`index.html`)
 
-Einzelne statische HTML-Datei (~2.400 Zeilen) mit eingebettetem CSS und JS. Enthält: Hero mit Video-Hintergrund, Services, Branchen-Grid, FAQ-Akkordeon, Kontaktformular. Das Kontaktformular hat nur eine Client-seitige Absende-Animation (kein Backend). Die `index.html` wird manuell gepflegt und **nicht** vom Generator erzeugt.
+Einzelne statische HTML-Datei (~2.400 Zeilen) mit eingebettetem CSS und JS. Enthält: Hero mit Video-Hintergrund, Services, Branchen-Grid, FAQ-Akkordeon, Kontaktformular. Das Kontaktformular hat nur eine Client-seitige Absende-Animation (kein Backend).
+
+### Statische Seiten
+
+`impressum.html`, `datenschutz.html`, `agb.html` — manuell gepflegte rechtliche Seiten mit eigenem inline CSS. Die `sitemap.xml` und `robots.txt` werden ebenfalls manuell gepflegt.
 
 ### Video (`video/`)
 
 Remotion-Projekt (React 18 + Remotion 4) für Instagram-Reels-Format (1080×1920, 15s @ 30fps). Hauptkomponente: `src/LayrShowcase.jsx` mit animierten Szenen. Farbkonstanten am Dateianfang spiegeln das Website-Theme wider.
 
-### Statische Seiten
-
-`impressum.html`, `datenschutz.html`, `agb.html` — manuell gepflegte rechtliche Seiten mit eigenem inline CSS. Die `sitemap.xml` und `robots.txt` werden ebenfalls manuell gepflegt (nicht vom Generator erzeugt).
-
 ### Health-Check-Reports
 
-`health-check-*.html` — Wöchentliche SEO/Health-Check-Reports als eigenständige HTML-Dateien.
+`health-check-*.html` — SEO/Health-Check-Reports als eigenständige HTML-Dateien (historische Artefakte, manuell gepflegt).
 
 ## Konventionen
 
-- **Sprache**: Alle Inhalte und Variablennamen in den Datenarrays sind Deutsch
-- **SEO**: Jede generierte Seite muss canonical URL, JSON-LD, Open Graph Tags, Geo-Meta-Tags und lokalisierte Meta-Descriptions enthalten
-- **Cross-Linking**: Landing Pages verlinken untereinander (andere Städte derselben Branche, andere Branchen derselben Stadt)
+- **Sprache**: Alle Inhalte sind deutsch
 - **Theme-Farben**: Background `#050505`, Akzent `#c8ff00`, identisch in Website und Video-Konstanten
 - **Fonts**: Plus Jakarta Sans (Display/Body), Space Mono (Monospace)
-- **Eigenständige Seiten**: Jede Landing Page und die Hauptseite enthalten ihr gesamtes CSS/JS inline — keine externen Stylesheets oder Scripts (außer Google Fonts)
+- **Eigenständige Seiten**: Jede Seite enthält ihr gesamtes CSS/JS inline — keine externen Stylesheets oder Scripts (außer Google Fonts)
 - **Domain**: `layrr.de` — alle canonical URLs und Sitemap-Einträge verwenden diese Domain
